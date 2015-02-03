@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <style>
+        [ng-cloak]{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div ng-controller="PersonCtrl">
+        <div title="The person's name is {{person.name}}">
+            Name: <span ng-cloak>{{ person.name }}</span>
+        </div>
+        <div>
+            Name: <span ng-bind="person.name"></span>
+        </div>
+        <div ng-show="canEditName(person)">
+            Name: <input ng-model="person.name">
+        </div>
+        <div>
+            Age: <input ng-model="person.age">
+        </div>
+        <div>
+            <input ng-model="newName" />
+            <button ng-click="addKid(newName)">Add</button>
+        </div>
+        <ul>
+            <li ng-repeat="child in person.children">
+                <button ng-click="removeKid(child)">remove</button>
+                {{$index}},
+                first: {{$first}},
+                middle: {{$middle}},
+                last: {{$last}},
+                <span ng-bind="child.name"></span>
+            </li>
+        </ul>
+        <div>
+            Accept: <input type="checkbox" 
+                           ng-model="acceptTerms"
+                           ng-true-value="'yes'"
+                           ng-false-value="'no'"
+                           >
+        </div>
+        <div>
+            <button ng-disabled="!canEditName(person)" ng-click="update(person, acceptTerms)">Update</button>
+        </div>
+    </div>
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

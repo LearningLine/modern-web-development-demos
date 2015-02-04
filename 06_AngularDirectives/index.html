@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Directives</title>
+    <link rel="stylesheet" href="jquery-ui-1.11.2\jquery-ui.css">
+</head>
+<body ng-app="myApp">
+    <div class="container" ng-controller="myController">
+        <span data-my-time-from-now="person.birthday"></span>
+        <br>
+        <input type="text"
+            ng-model="person.birthday"
+            my-date-picker
+            my-date-picker-show-on="defaultShowOn || 'focus'"
+            my-date-picker-on-change="dateChanged()"
+        >
+        <br>
+        Happy birthday on {{ person.birthday | date }}!
+        <br>
+        <button ng-click="logPerson(person)">Log Person</button>
+    </div>
+
+    <script src="jquery-ui-1.11.2\external\jquery\jquery.js"></script>
+    <script src="jquery-ui-1.11.2\jquery-ui.js"></script>
+    <script src="angular.js"></script>
+    <script src="moment.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿label {
+    /*width: 100px;*/
+    /*display: inline-block;*/
+    padding-right: 6px;
+}
+
+.sendMessage {
+    color: green;
+}
+
+.receivedMessage {
+    color: blue;
+}
+
+.pullRight {
+    float: right;
+}

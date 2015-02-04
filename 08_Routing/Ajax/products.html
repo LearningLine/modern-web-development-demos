@@ -1,0 +1,10 @@
+﻿<div ng-controller="ProductsCtrl">
+    <h1>Products</h1>
+    <p ng-bind="message"></p>
+    <ul>
+        <li ng-repeat="p in products">
+            <a href="#/products/{{p.id}}"
+               ng-bind="p.name"></a>
+        </li>
+    </ul>
+</div>

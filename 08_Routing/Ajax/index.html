@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body ng-app="app">
+    <ul>
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/products">Products</a></li>
+    </ul>
+
+    <div>
+        <ng-view></ng-view>
+    </div>
+   
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="App/MyBundle.js"></script>
+    <script src="Products/products.js"></script>
+</body>
+</html>

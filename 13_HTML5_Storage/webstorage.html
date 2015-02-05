@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Storage</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+    <input type="text" ng-model="name">
+    <button ng-click="save(name)">Save</button>
+
+    <script src="angular.js"></script>
+
+    <script>
+
+        angular
+            .module('myApp', [])
+            .constant('theStorage', window.localStorage)
+            .controller('myController', function($scope, theStorage) {
+                // $scope.name = theStorage.getItem('name');
+                var person = theStorage['name'];
+                $scope.name = person && JSON.parse(person).name;
+
+                $scope.save = function(name) {
+                    // theStorage.setItem('name', name);
+                    theStorage.name = JSON.stringify({ name: name });
+                };
+            })
+        ;
+
+        window.addEventListener('storage', function(e) {
+            console.log(e);
+        });
+
+    </script>
+
+</body>
+</html>

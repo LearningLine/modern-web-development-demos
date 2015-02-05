@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IndexedDB</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+    <input type="text" ng-model="name">
+    <button ng-click="save(name)">Put</button>
+
+    <hr>
+
+    <input type="text" ng-model="id">
+    <button ng-click="read(id)">Get</button>
+
+    <hr>
+
+    <button ng-click="query()">Query</button>
+
+    <ul>
+        <li ng-repeat="person in people">{{ person.id }}: {{ person.name }}</li>
+    </ul>
+
+    <script src="angular.js"></script>
+
+    <script>
+
+        angular
+            .module('myApp', [])
+            .factory('myDB', function($q) {
+                return {
+                    open: function() {
+                        // return new Promise(function(resolve, reject) {
+                        //
+                        // });
+
+                        var deferred = $q.defer();
+
+                        if (!window.indexedDB) {
+                            alert('Get a better browser!');
+                        }
+
+                        var openReq = indexedDB.open('myDB', 4);
+                        openReq.onsuccess = function(e) {
+                            console.log(e);
+
+                            var db = e.target.result;
+
+                            deferred.resolve(db);
+                        };
+                        openReq.onupgradeneeded = function(e) {
+                            console.log(e);
+
+                            var db = e.target.result;
+
+                            if (e.newVersion <= 3) {
+                                var store = db.createObjectStore('people', {
+                                    // autoIncrement: true
+                                    keyPath: 'id'
+                                });
+                            } else {
+                                var store = e.target.transaction.objectStore('people');
+                                store.createIndex('peopleByName', 'name');
+                            }
+                        };
+
+                        return deferred.promise;
+                    }
+                };
+            })
+            .controller('myController', function($scope, myDB) {
+                myDB.open().then(function(db) {
+                    console.log(db);
+
+                    $scope.save = function(name) {
+                        var person = {
+                            id: +new Date(),
+                            name: name
+                        };
+
+                        var tx = db.transaction([ 'people' ], 'readwrite');
+
+                        var peopleStore = tx.objectStore('people');
+
+                        var putReq = peopleStore.put(person);
+
+                        putReq.onsuccess = function() {
+                            console.log('person wrote');
+                        };
+
+                        tx.oncomplete = function() {
+                            console.log('tx complete');
+                        };
+                    };
+
+                    $scope.read = function(id) {
+                        var tx = db.transaction([ 'people' ], 'readonly');
+                        var store = tx.objectStore('people');
+
+                        var getReq = store.get(+id);
+                        getReq.onsuccess = function(e) {
+                            var person = e.target.result;
+                            $scope.name = person.name;
+                        };
+                    };
+
+                    $scope.query = function() {
+                        var tx = db.transaction([ 'people' ], 'readonly');
+
+                        var store = tx.objectStore('people');
+
+                        var curReq = store.openCursor();
+
+                        var people = [];
+
+                        curReq.onsuccess = function(e) {
+                            var cursor = e.target.result;
+
+                            if (cursor) {
+                                people.push(cursor.value);
+                                cursor.continue();
+                            } else {
+                                $scope.$apply(function() {
+                                    $scope.people = people;
+                                });
+                            }
+                        };
+                    };
+                });
+            })
+        ;
+
+    </script>
+
+</body>
+</html>

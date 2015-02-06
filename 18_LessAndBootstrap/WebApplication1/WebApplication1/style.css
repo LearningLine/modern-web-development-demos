@@ -1,0 +1,23 @@
+﻿.derived {
+  font-size: large;
+  background: red;
+  border: 1px solid #ffff33;
+}
+ul {
+  margin: 0;
+}
+ul > li {
+  padding: 10px;
+}
+ul > li > a {
+  text-decoration: none;
+}
+ul > li > a:hover {
+  background-color: cyan;
+}
+@media screen and (min-width: 768px) {
+  ul > li > a {
+    font-size: larger;
+  }
+}
+/*# sourceMappingURL=style.css.map */

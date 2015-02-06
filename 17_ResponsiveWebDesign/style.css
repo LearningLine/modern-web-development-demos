@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+main {
+    background: cyan;
+}
+
+aside {
+    background: lime;
+}
+
+/* are we in a desktop device? */
+/* is the viewport width >= 768px? */
+@media screen and (min-width: 768px) {
+    .container {
+        overflow: hidden;
+    }
+
+    main {
+        float: left;
+        width: 60%;
+        padding-bottom: 9999px;
+        margin-bottom: -9999px;
+    }
+
+    aside {
+        padding-left: 10px;
+        float: left;
+        width: 40%;
+        padding-bottom: 9999px;
+        margin-bottom: -9999px;
+    }
+
+    /*
+    aside::after {
+        clear: both;
+        zoom: 1;
+    }
+    */
+
+    footer {
+        clear: both;
+    }
+}
+
+@media print {
+
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Testing</title>
+</head>
+<body ng-app="myApp"
+      ng-controller="myController"
+      ng-init="foo = 'bar'; baz = 'quux';"
+>
+    <p>Methodologies:</p>
+
+    <ul>
+        <li>Test-driven development</li>
+        <li>Behavior-driven development</li>
+        <li>Test-after hacking</li>
+    </ul>
+
+    <p>Tools:</p>
+
+    <ul>
+        <li>Jasmine - BDD-style test runner (RSpec)</li>
+        <li>Karma - AngularJS-specific unit testing tool</li>
+        <li>Protractor - AngularJS-specific end-to-end testing tool</li>
+    </ul>
+
+    <hr>
+
+    <input type="text" ng-model="a">
+    <input type="text" ng-model="b">
+
+    <!-- <button ng-click="add()">Add</button> -->
+    <!-- <span ng-bind="sum"></span> -->
+
+    <button ng-click="sum2 = add2(a, b)">Add</button>
+    <span ng-bind="sum2"></span>
+
+    <script src="node_modules\angular\angular.js"></script>
+    <script src="app\app.js"></script>
+</body>
+</html>

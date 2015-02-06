@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html ng-app="moviesApp">
+    <head>
+        <title>Movies</title>
+        <link href="/CSS/bootstrap.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <div class="container" ng-controller="MoviesCtrl">
+
+            <!-- <p>This page was rendered at {{ renderTime | date:'dd/MM/yyyy' }}!</p> -->
+            <p>This page was rendered at {{ renderTime | fromNow }}!</p>
+
+            <h1>Movie Manager</h1>
+
+            <div class="container">
+
+                Filter: <input type="text" ng-model="searchText">
+
+                <table class="table table-striped table-bordered table-hover"
+                       ng-hide="selectedMovie"
+                >
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Director</th>
+                            <th>Year</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="btn-link"
+                            ng-repeat="movie in movies | filter:{title:searchText}"
+                            ng-click="select(movie)"
+                        >
+                            <td>{{ movie.title | uppercase }}</td>
+                            <td>{{ movie.directorID | directorName }}</td>
+                            <td>{{ movie.year}}</td>
+                            <td>{{ movie.rating }}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <form class="form-horizontal"
+                      ng-show="selectedMovie"
+                >
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="selectedMovie.title"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Description</label>
+                        <div class="col-sm-10">
+                            <textarea type="text"
+                                      class="form-control"
+                                      rows="5"
+                                      ng-model="selectedMovie.description"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Year</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="selectedMovie.year"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Rating</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="selectedMovie.rating"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Director</label>
+                        <div class="col-sm-10">
+                            <select class="form-control"
+                                ng-model="selectedMovie.directorID"
+                                ng-options="director.id as director.name for director in directors"
+                            ></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Country</label>
+                        <div class="col-sm-10">
+                            <select class="form-control"
+                                ng-model="selectedMovie.countryID"
+                                ng-options="country.id as country.name for country in countries"
+                            ></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Poster</label>
+                        <div class="col-sm-10">
+                            <input type="text"
+                                   class="form-control"
+                                   ng-model="selectedMovie.posterName"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button class="btn btn-primary"
+                                    ng-click="save(selectedMovie)"
+                            >
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <script src="http://momentjs.com/downloads/moment.js"></script>
+        <script src="/Scripts/angular.js"> </script>
+        <script src="/App/App.js"> </script>
+        <script src="/App/Movies.js"> </script>
+        <script src="/App/Directors.js"> </script>
+        <script src="/App/Countries.js"> </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Express/Ajax</title>
+</head>
+<body ng-app="myApp" ng-controller="myController1 as ctrl">
+
+    <div ng-bind-html="display"></div>
+
+    <hr>
+
+    {{ data }}
+
+    <hr>
+
+    <form ng-submit="ctrl.savePerson(person)">
+        <label for="name">Name</label>
+        <input id="name" type="text" ng-model="person.name">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+    <hr>
+
+    The current time is: <%= new Date() %>!
+
+    <hr>
+
+    <script src="angular.js"></script>
+    <script src="angular-resource.js"></script>
+    <script src="app.js"></script>
+
+    <script>
+
+        // var xhr = new XMLHttpRequest();
+        // xhr.open('GET', '/api/people', true);
+        // xhr.onreadystatechange = function() {
+        //     if (xhr.readyState === 4) {
+        //         var data = JSON.parse(xhr.responseText);
+        //         // alert(data.length);
+        //     }
+        // };
+        // xhr.send();
+
+        // $.ajax({
+        //     url: '/api/people',
+        //     type: 'GET'
+        // });
+
+    </script>
+
+</body>
+</html>

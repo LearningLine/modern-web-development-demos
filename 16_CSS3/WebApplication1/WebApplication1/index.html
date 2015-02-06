@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <style>
+        body{
+            font-family:'Indie Flower'
+        }
+        li:nth-child(3n+1){
+            xbackground-color:lime;
+        }
+        li:not(.female){
+            background-color:blue;
+        }
+        h1 {
+            text-align: center;
+            background-color: orange;
+            xbackground: linear-gradient(-90deg, red 0%, green 25%, purple 64%, lime 100%);
+            xborder-radius: 5px 20px 0 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 0 5px pink, 0 0 0 7px green, 0 0 0 10px purple;
+            xbox-shadow: 10px 5px 5px #555;
+            xtext-shadow: 10px 5px 5px red;
+            xtransition: all 1s;
+            position: relative;
+            
+            x-webkit-animation: foo 3s 3 alternate;
+        }
+        h1:active{
+            xbackground-color:green;
+            xtransform: rotate(-45deg) translate(50px, 100px);
+            /*-moz-transform: scale(1.2, 1.2);
+            -ms-transform: scale(1.2, 1.2);
+            -o-transform: scale(1.2, 1.2);
+            -webkit-transform: scale(1.2, 1.2);
+            transform: scale(1.2, 1.2);*/
+        }
+
+        @-webkit-keyframes foo {
+            0%{
+                top:0;
+                left:0;
+            }
+            20%{
+                top:100px;
+                left:50px;
+                background-color:green;
+            }
+            50%{
+                left:-100px;
+            }
+            100%{
+                background-color:pink;
+                top:50px;
+                left:25px;
+            }
+
+        }
+
+        #news {
+            -moz-column-count: 6;
+            -webkit-column-count: 6;
+            column-count: 6;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to my App</h1>
+    </div>
+
+    <div id="news">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+        Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+        Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+        Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+        Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+        Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+        Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+        Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+        Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+        Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.
+
+    </div>
+
+    <ul>
+        <li>dfhjkfd</li>
+        <li class="female">dfhjkfd</li>
+        <li>dfhjkfd</li>
+        <li class="female">dfhjkfd</li>
+        <li>dfhjkfd</li>
+    </ul>
+</body>
+</html>

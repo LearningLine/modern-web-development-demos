@@ -1,0 +1,14 @@
+CACHE MANIFEST
+
+# 15
+
+script.js
+
+NETWORK:
+/api/ping
+*
+
+FALLBACK:
+# /images /notFound.png
+# /api /error.json
+# / /notFound.html

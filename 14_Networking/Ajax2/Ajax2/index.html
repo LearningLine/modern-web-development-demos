@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+            //console.log(typeof xhr.response, xhr.response);
+            console.log(JSON.parse(xhr.responseText));
+        }
+        xhr.upload.onprogress = function () {
+
+        }
+        xhr.open("GET", "http://localhost:39110/products", true);
+        //xhr.responseType = "json";
+        //xhr.setRequestHeader("Authorization", "Bearer jdfhjdfk");
+        xhr.send();
+    </script>
+</body>
+</html>

@@ -12,6 +12,7 @@ namespace WebApplication1
         public void Configuration(IAppBuilder app)
         {
             var config = new HttpConfiguration();
+            config.EnableCors();
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
             config.Formatters.Remove(config.Formatters.XmlFormatter);
             config.MapHttpAttributeRoutes();

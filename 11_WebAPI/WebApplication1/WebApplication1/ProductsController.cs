@@ -5,10 +5,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApplication1
 {
     [Route("products")]
+    [EnableCors("http://localhost:45258", "*", "*")]
     public class ProductsController : ApiController
     {
         static List<Product> products = new List<Product>()

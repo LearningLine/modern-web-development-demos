@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+    <style>
+        .red { color: red}
+    </style>
+</head>
+<body ng-app="RPGGame" ng-cloak>
+    <div ng-controller="CharacterCreateCtrl">
+
+        <h1 red-when-hover>Super Game</h1>
+        <div>
+            <label>Name: </label>
+            <input type="text" ng-model="character.name" />
+        </div>
+        <select ng-model="character.role"
+                ng-options="role.name for role in roles"></select>
+        <div>
+            Your gold is: {{character.gold}}
+        </div>
+        <div>
+            <spm-button buttontext="Eat" variablestyle="buttonStyle" 
+                        textstyle="color: red"></spm-button>
+
+            <button ng-disabled="!(character.name && character.role)" ng-click="createCharacter()">Create Character</button>
+        </div>
+        <div ng-show="character.isCreated">
+            Your characters name is: {{character.name}}<br />
+            Your characters role is: {{character.role.name}}<br />
+            Your characters gold is: {{character.gold}}<br />
+            Your characters stats are: {{character.stats}}
+        </div>
+    </div>
+    <hr />
+
+    <stat-manager></stat-manager>
+
+    <script src="app.js"></script>
+</body>
+</html>

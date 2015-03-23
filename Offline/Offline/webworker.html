@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Web Worker</h1>
+    <button>Click ME</button>
+
+    <script>
+        document.querySelector('button').addEventListener('click', function () {
+            console.log('clicked');
+            var worker = new Worker('worker.js');
+            worker.onmessage = function (e) {
+                alert(e.data);
+            }
+            worker.postMessage("start");
+        })
+    </script>
+
+</body>
+</html>

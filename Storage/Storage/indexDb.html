@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        //indexedDB.deleteDatabase("peopleDb");
+
+        var openRequest = indexedDB.open('peopleDb', 2);
+
+        openRequest.onupgradeneeded = function () {
+            console.log("onupgradeneeded");
+            
+            var db = openRequest.result;
+            
+            var store = db.createObjectStore("personStore", { keyPath: "name" });
+            var idx = store.createIndex("AgeIndex", "age", { unique: false });
+            store.add({ name: "Shawn", age: 21 });
+            store.add({ name: "Bill", age: 33 });
+            store.add({ name: "Fred", age: 33 });
+            store.add({ name: "John", age: 53 });
+            store.add({ name: "Greg", age: 23 });
+            store.add({ name: "Amy", age: 73 });
+        }
+
+        openRequest.onsuccess = function () {
+            console.log("onsuccess");
+            var db = openRequest.result;
+
+            var tx = db.transaction(["personStore"]);
+            var pstore = tx.objectStore("personStore");
+
+            var getRequest = pstore.get("Shawn");
+            getRequest.onsuccess = function () {
+                console.log(getRequest.result);
+            }
+
+            var cursorRequest = pstore.openCursor(IDBKeyRange.upperBound("Bob", "prev"));
+            cursorRequest.onsuccess = function () {
+                var cursor = cursorRequest.result;
+                if (cursor) {
+                    var person = cursor.value;
+                    console.log(person);
+                    cursor.continue();
+                }
+                //Do whatever when youve iterated the list
+            }
+
+        }
+
+
+
+    </script>
+</body>
+</html>

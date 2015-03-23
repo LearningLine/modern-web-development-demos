@@ -1,0 +1,67 @@
+﻿@primarycolor: green;
+@secondarycolor: spin(@primarycolor, 180);
+
+@terciarycolor: @primarycolor - @secondarycolor;
+
+body {
+    background: @primarycolor;
+    color: @terciarycolor;
+}
+div {
+    color: @secondarycolor;
+    &:before {
+        background: green;
+    }
+}
+
+.article {
+    color: white; 
+    li {
+             color: blue;
+             div {
+                 color: green;
+             }
+    }
+    p {
+             color: green;
+         }
+
+}
+
+.lorum {
+    color: black;
+    @media (min-width: 500) {
+        column-count: 2;
+    }
+}
+
+.fivecolumns {
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    p {
+        background: red;
+    }
+}
+
+p {
+    &:extend(.fivecolumns);
+}
+
+div {
+     &:extend(.fivecolumns);
+}
+
+span {
+     &:extend(.fivecolumns);
+}
+
+.bgcolor (@a) when (lightness(@a) >= 50%) {
+  background-color: black;
+}
+.bgcolor (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.bgcolor (@a) {
+  color: @a;
+}

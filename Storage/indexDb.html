@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        var openRequest = indexedDB.open('peopleDb', 1);
+
+        openRequest.onupgradeneeded = function () {
+            console.log("onupgradeneeded");
+            var db = openRequest.result;
+
+            var store = db.createObjectStore("personStore", { keyPath: "name" });
+            var idx = store.createIndex("AgeIndex", "age", { unique: false });
+            store.add({ name: "Shawn", age: 21 });
+            store.add({ name: "Joe", age: 33 });
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<div>
+    
+    <div ng-controller="CharacterCreateCtrl">
+
+        <h1 red-when-hover>Super Game</h1>
+        <div>
+            <label>Name: </label>
+            <input type="text" ng-model="character.name" />
+        </div>
+        <select ng-change="roleChanged()" ng-model="character.role"
+                ng-options="role.name for role in roles"></select>
+
+        <img width="200px" src="{{roleImage}}" />
+        {{roleImage}}
+
+        <div>
+            Your gold is: {{character.gold}}
+        </div>
+        <div>
+            <spm-button buttontext="Eat" variablestyle="buttonStyle"
+                        textstyle="color: red" clickfunction="createCharacter"></spm-button>
+
+            <button ng-disabled="!(character.name && character.role)" ng-click="createCharacter()">Create Character</button>
+        </div>
+        <div ng-show="character.isCreated">
+            Your characters name is: {{character.name}}<br />
+            Your characters role is: {{character.role.name}}<br />
+            Your characters gold is: {{character.gold}}<br />
+            Your characters stats are: {{character.stats}}
+        </div>
+    </div>
+    <hr />
+
+    <stat-manager></stat-manager>
+</div>

@@ -1,0 +1,1 @@
+﻿body{background:green;color:green}div{color:purple}div:before{background:green}.article{color:#fff}.article li{color:blue}.article li div{color:green}.article p{color:green}.lorum{color:#000}@media(min-width:500){.lorum{column-count:2}}.fivecolumns,p,div,span{-webkit-column-count:5;-moz-column-count:5;column-count:5}.fivecolumns p{background:red}

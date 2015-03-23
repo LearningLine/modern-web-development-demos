@@ -1,0 +1,12 @@
+﻿CACHE MANIFEST
+#Version 1.7
+
+CACHE:
+/css.css
+/sorry.html
+
+NETWORK:
+/api/*
+
+FALLBACK:
+/ /sorry.html

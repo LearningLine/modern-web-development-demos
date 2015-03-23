@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Storage!</h1>
+    <div id="localStorageDiv"></div>
+    <div id="sessionStorageDiv"></div>
+    <input type="text" id="local" />
+    <button id="localBtn">Store Local</button>
+    <div></div>
+    <input type="text" id="session" />
+    <button id="sessionBtn">Store Session</button>
+    <script src="Scripts/jquery-2.1.3.js"></script>
+
+    <script>
+
+        $(function() {
+            $('#localBtn').click(function () {
+                var val = $('#local').val();
+                console.log(val);
+                localStorage.setItem('local', val);
+            });
+            $('#sessionBtn').click(function () {
+                var val = $('#session').val();
+                console.log(val);
+                sessionStorage.setItem('session', val);
+            });
+
+            $('#localStorageDiv').append(localStorage.local);
+            $('#sessionStorageDiv').append(sessionStorage.session);
+        })
+    </script>
+   
+</body>
+</html>

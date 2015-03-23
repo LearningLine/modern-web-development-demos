@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" manifest="manifest.txt">
+<head>
+    <link href="/css.css" rel="stylesheet" />
+    <title></title>
+
+</head>
+
+<body>
+    <h1>OffLine</h1>
+    <h2>@DateTime.Now</h2>
+
+    <a href="/page2.html">Page 2</a>
+
+    <script>
+        window.applicationCache.onupdateready = function () {
+            applicationCache.swapCache();
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

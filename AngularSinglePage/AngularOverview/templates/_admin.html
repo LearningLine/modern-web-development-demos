@@ -1,0 +1,28 @@
+﻿
+<div>
+    <button ng-click="goHome()">Go Home</button>
+    <div>
+        <table>
+            <tr><td>Name</td><td>Level</td><td>id</td></tr>
+            <tr ng-repeat="monster in monsters">
+                <td><input ng-model="monster.name" /></td>
+                <td><input ng-model="monster.level" /></td>
+                <td><input ng-model="monster.id" /></td>
+                <td><button ng-click="save(monster)">Save</button></td>
+                <!--  <td><button ng-click="delete(monster)">Delete</button></td> -->
+            </tr>
+            <tr>
+                <td><input ng-model="monster.name" /></td>
+                <td><input ng-model="monster.level" /></td>
+                <td><input ng-model="monster.id" /></td>
+                <td><button ng-click="create(monster)">Create</button></td>
+
+            </tr>
+        </table>
+
+    </div>
+
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-resource.js"></script>
+    <script src="app.js"></script>
+</div>

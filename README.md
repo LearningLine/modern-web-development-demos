@@ -15,6 +15,8 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 ## Links ##
 
 - Functional JS.ppt
+	- [https://lodash.com/](https://lodash.com/)
+	- [http://sugarjs.com/](http://sugarjs.com/)
 - Object-oriented JS.ppt
 - jQuery.ppt
 - jQuery UI.ppt

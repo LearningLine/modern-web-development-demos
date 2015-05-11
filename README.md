@@ -18,6 +18,8 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 	- [https://lodash.com/](https://lodash.com/)
 	- [http://sugarjs.com/](http://sugarjs.com/)
 - Object-oriented JS.ppt
+	- [http://www.typescriptlang.org/](http://www.typescriptlang.org/)
+	- [http://babeljs.io/](http://babeljs.io/)
 - jQuery.ppt
 - jQuery UI.ppt
 - HTML5 Networking.ppt

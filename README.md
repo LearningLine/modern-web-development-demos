@@ -22,6 +22,10 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 	- [http://babeljs.io/](http://babeljs.io/)
 - jQuery.ppt
 - jQuery UI.ppt
+	- [jqGrid](http://www.trirand.com/blog/?page_id=5)
+	- [https://select2.github.io/](https://select2.github.io/)
+	- [http://www.telerik.com/kendo-ui](http://www.telerik.com/kendo-ui)
+	- [http://getbootstrap.com/](http://getbootstrap.com/)
 - HTML5 Networking.ppt
 - AngularJS Introduction.ppt
 - AngularJS and AJAX.ppt

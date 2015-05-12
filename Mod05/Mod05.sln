@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html5Networking", "Html5Networking\Html5Networking.csproj", "{F17D4BC5-FB3A-4CCE-9CCC-947E220A877F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtherSite", "OtherSite\OtherSite.csproj", "{F92FFC52-87E9-4D9D-A5DA-E129178379BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F17D4BC5-FB3A-4CCE-9CCC-947E220A877F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17D4BC5-FB3A-4CCE-9CCC-947E220A877F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17D4BC5-FB3A-4CCE-9CCC-947E220A877F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17D4BC5-FB3A-4CCE-9CCC-947E220A877F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92FFC52-87E9-4D9D-A5DA-E129178379BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92FFC52-87E9-4D9D-A5DA-E129178379BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92FFC52-87E9-4D9D-A5DA-E129178379BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92FFC52-87E9-4D9D-A5DA-E129178379BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

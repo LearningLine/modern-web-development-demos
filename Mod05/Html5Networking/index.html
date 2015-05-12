@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MWD</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/start/jquery-ui.css"/>
+</head>
+<body>
+<h1>Modern Web Development</h1>
+
+<h2>HTML5 Networking</h2>
+    <h3>Cross-Origin Resource Sharing</h3>
+
+<ul id="books">
+    
+</ul>
+
+<pre id="err"></pre>
+
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+<script>
+    
+    $.getJSON('http://localhost:37450/api/books')
+        .then(function(books) {
+        books.forEach(function(book) {
+            $('<li>').text(book.Title).appendTo('#books');
+
+        });
+    }, function(err) {
+        $('#err').text(JSON.stringify(err));
+    })
+
+</script>
+</body>
+</html>

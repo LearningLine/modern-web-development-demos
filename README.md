@@ -14,22 +14,26 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 
 ## Links ##
 
-- Functional JS.ppt
+- Functional JS
 	- [https://lodash.com/](https://lodash.com/)
 	- [http://sugarjs.com/](http://sugarjs.com/)
-- Object-oriented JS.ppt
+- Object-oriented JS
 	- [http://www.typescriptlang.org/](http://www.typescriptlang.org/)
 	- [http://babeljs.io/](http://babeljs.io/)
-- jQuery.ppt
-- jQuery UI.ppt
+- jQuery
+- jQuery UI
 	- [jqGrid](http://www.trirand.com/blog/?page_id=5)
 	- [https://select2.github.io/](https://select2.github.io/)
 	- [http://www.telerik.com/kendo-ui](http://www.telerik.com/kendo-ui)
 	- [http://getbootstrap.com/](http://getbootstrap.com/)
-- HTML5 Networking.ppt
-- AngularJS Introduction.ppt
-- AngularJS and AJAX.ppt
-- AngularJS Directives.ppt
-- Testing AngularJS.ppt
-- REST.ppt
-- RESTful services and the browser.ppt
+- HTML5 Networking
+	- [http://caniuse.com/](http://caniuse.com/)
+	- [http://html5please.com/](http://html5please.com/)
+	- [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
+	- [http://socket.io/](http://socket.io/)
+- AngularJS Introduction
+- AngularJS and AJAX
+- AngularJS Directives
+- Testing AngularJS
+- REST
+- RESTful services and the browser

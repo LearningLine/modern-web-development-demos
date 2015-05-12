@@ -21,7 +21,7 @@ namespace Html5Networking.Api
             var books = await _repo.GetBooks();
 
             var response = Request.CreateResponse(HttpStatusCode.OK, books);
-
+            response.Headers.Add("Access-Control-Allow-Origin", "*");
             return response;
         }
 

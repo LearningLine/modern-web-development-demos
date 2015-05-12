@@ -1,0 +1,31 @@
+#large{
+    position: absolute;
+}
+
+#small{
+    position: absolute;
+}
+
+
+.small{
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    top: 150px;
+    left: 50px;
+
+}
+
+.large{
+    background-color: lightcoral;
+    height: 250px;
+    width: 250px;
+    top: 150px;
+    left: 250px;
+
+}
+
+.ui-draggable-dragging{
+    opacity: 0.5;
+    border: 10px black solid;
+}

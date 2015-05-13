@@ -32,6 +32,12 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 	- [http://www.telerik.com/fiddler](http://www.telerik.com/fiddler)
 	- [http://socket.io/](http://socket.io/)
 - AngularJS Introduction
+	- [http://modernizr.com/](http://modernizr.com/)
+	- [http://webpack.github.io/](http://webpack.github.io/)
+	- [https://github.com/olov/ng-annotate](https://github.com/olov/ng-annotate)
+	- [http://gulpjs.com/](http://gulpjs.com/)
+	- [http://gruntjs.com/](http://gruntjs.com/)
+	- [http://rawstack.azurewebsites.net/Movies](http://rawstack.azurewebsites.net/Movies)
 - AngularJS and AJAX
 - AngularJS Directives
 - Testing AngularJS

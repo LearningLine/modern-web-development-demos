@@ -26,15 +26,29 @@
     });
 
 
-    app.controller('moviesListController', function ($scope) {
+    app.controller('moviesListController', function ($scope, $http) {
 
+        $http.get('/api/movies').then(function (e) {
+            $scope.movies = e.data;
+        })
     });
 
 
-    app.controller('movieEditController', function ($scope, $routeParams,$location) {
-        
-        $scope.save = function(){
-            $location.path('/movies')
+    app.controller('movieEditController',
+        function ($scope, $routeParams, $location, $http) {
+
+        $http.get('/api/movies/' + $routeParams.id).then(function (e) {
+            $scope.movie = e.data;
+
+        });
+
+        $scope.save = function () {
+            $http.put('/api/movies/' + $routeParams.id, $scope.movie).then(function(){
+                $location.path('/movies')
+
+            }, function(e){
+                console.log(e);
+            })
         }
 
     });

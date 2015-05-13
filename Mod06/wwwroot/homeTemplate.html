@@ -1,0 +1,15 @@
+
+<h3>The home view</h3>
+
+
+<ul>
+    <li ng-repeat="p in people | filter:searchText">
+        <input type="text" data-ng-model="p.name"/>
+            <span ng-bind="p.name"></span>
+
+        <button ng-click="toPersonDetail(p)">goto details</button>    </li>
+</ul>
+
+
+
+<button ng-click="toDetail()">goto details</button>

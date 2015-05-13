@@ -39,7 +39,10 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 	- [http://gruntjs.com/](http://gruntjs.com/)
 	- [http://rawstack.azurewebsites.net/Movies](http://rawstack.azurewebsites.net/Movies)
 - AngularJS and AJAX
+	- [http://modernizr.com/](http://modernizr.com/)
 - AngularJS Directives
+	- [https://www.npmjs.com/package/grunt-ng-template](https://www.npmjs.com/package/grunt-ng-template)
+	- [https://www.npmjs.com/package/gulp-ng-template](https://www.npmjs.com/package/gulp-ng-template)
 - Testing AngularJS
 - REST
 - RESTful services and the browser

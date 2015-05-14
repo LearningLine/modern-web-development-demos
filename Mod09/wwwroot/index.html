@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MWD</title>
+
+    <script src="angular.js"></script>
+
+</head>
+<body data-ng-app="demoApp">
+<h1>Modern Web Development</h1>
+
+<h2>Testing AngularJS</h2>
+
+<h3>simpleController</h3>
+<div ng-controller="simpleController">
+    <ul>
+        <li ng-repeat="movie in movies">
+            {{movie.title}}
+        </li>
+    </ul>
+</div>
+
+<h3>httpController</h3>
+<div ng-controller="httpController">
+    <ul>
+        <li ng-repeat="movie in movies">
+            {{movie.title}}
+        </li>
+    </ul>
+</div>
+
+
+<script src="demo.js"></script>
+
+
+
+</body>
+</html>

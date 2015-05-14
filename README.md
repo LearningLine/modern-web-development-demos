@@ -44,5 +44,8 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 	- [https://www.npmjs.com/package/grunt-ng-template](https://www.npmjs.com/package/grunt-ng-template)
 	- [https://www.npmjs.com/package/gulp-ng-template](https://www.npmjs.com/package/gulp-ng-template)
 - Testing AngularJS
+	- [https://github.com/airportyh/testem](https://github.com/airportyh/testem)
+	- [http://karma-runner.github.io/0.8/config/coverage.html](http://karma-runner.github.io/0.8/config/coverage.html)
+	- [https://github.com/yahoo/istanbul](https://github.com/yahoo/istanbul)
 - REST
 - RESTful services and the browser

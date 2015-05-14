@@ -48,4 +48,6 @@ If you are **not** in one of our courses, enjoy the samples and please consider 
 	- [http://karma-runner.github.io/0.8/config/coverage.html](http://karma-runner.github.io/0.8/config/coverage.html)
 	- [https://github.com/yahoo/istanbul](https://github.com/yahoo/istanbul)
 - REST
+	- [http://tools.ietf.org/rfc/rfc1945.txt](http://tools.ietf.org/rfc/rfc1945.txt)
+	- [https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)
 - RESTful services and the browser

@@ -15,15 +15,16 @@ Course Outline
 ----------------------
 
 1. **Functional JS**
-	- http://jshint.com/
-	- http://www.jslint.com/
-	- https://www.npmjs.com/package/gulp-jshint
-	- https://github.com/airbnb/javascript/blob/master/linters/jshintrc
-	- http://underscorejs.org/
-	- http://sugarjs.com/
-	- http://addyosmani.com/resources/essentialjsdesignpatterns/book/
+	1. 	- http://jshint.com/
+	1. 	- http://www.jslint.com/
+	1. 	- https://www.npmjs.com/package/gulp-jshint
+	1. 	- https://github.com/airbnb/javascript/blob/master/linters/jshintrc
+	1. 	- http://underscorejs.org/
+	1. 	- http://sugarjs.com/
+	1. 	- http://addyosmani.com/resources/essentialjsdesignpatterns/book/
 1. **Object-oriented JS**
-	1. 
+	1. http://www.typescriptlang.org/
+	2. http://babeljs.io/
 1. **jQuery**
 	1. 
 1. **jQuery UI**

@@ -1,0 +1,19 @@
+{
+  "name": "MWD",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mauricedb/",
+  "authors": [
+    "Maurice de Beijer <mauricedb@develop.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}

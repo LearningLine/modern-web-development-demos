@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Modern Web Development</title>
+
+</head>
+
+<body>
+    <h1>HTML5 Networking</h1>
+
+    <button id="btnLoad">Load</button>
+    <pre id="result"></pre>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+    <script>
+        $(function() {
+            $('#btnLoad').click(function() {
+                $.getJSON('http://localhost:47443/api/books/1').then(function(books) {
+                    $('#result').text(JSON.stringify(books));
+                }, function(err) {
+                    $('#result').text(JSON.stringify(err));
+                });
+
+            });
+        });
+
+    </script>
+</body>
+</html>

@@ -12,6 +12,7 @@ namespace Mod05
     {
         public void Configuration(IAppBuilder app)
         {
+            app.MapSignalR();
             ConfigureAuth(app);
         }
     }

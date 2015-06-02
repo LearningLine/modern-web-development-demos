@@ -33,7 +33,7 @@ Course Outline
 	2. http://www.jqplot.com/index.php
 	3. http://www.telerik.com/purchase/kendo-ui
 1. **HTML5 Networking**
-	1. 
+	1. http://www.telerik.com/fiddler
 1. **AngularJS**
 	1. 
 1. **AngularJS and AJAX**

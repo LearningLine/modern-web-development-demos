@@ -26,7 +26,8 @@ Course Outline
 	1. http://www.typescriptlang.org/
 	2. http://babeljs.io/
 1. **jQuery**
-	1. 
+	1. http://trends.builtwith.com/javascript
+	2. http://code.jquery.com/
 1. **jQuery UI**
 	1. 
 1. **HTML5 Networking**

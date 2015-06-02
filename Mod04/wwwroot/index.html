@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Modern Web Development</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/start/jquery-ui.css"/>
+
+    <style>
+        .fixed{
+            position: absolute;
+        }
+        .small{
+            top: 100px;
+            left: 100px;
+            height: 100px;
+            width: 100px;
+        }
+
+        .large{
+            top: 150px;
+            left: 250px;
+            height: 250px;
+            width: 250px;
+        }
+
+        .green{
+            background-color: green;
+        }
+
+        .blue{
+            background-color: yellow;
+            height: 250px;
+        }
+        .red {
+            background-color: red;
+            height: 50px;
+            /*display: none;*/
+        }
+    </style>
+</head>
+
+<body>
+<h1>jQuery UI</h1>
+
+<div id="two" class="fixed large blue"></div>
+<div id="one" class="fixed small green"></div>
+
+
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="demo.js"></script>
+
+</body>
+</html>

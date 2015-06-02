@@ -29,7 +29,9 @@ Course Outline
 	1. http://trends.builtwith.com/javascript
 	2. http://code.jquery.com/
 1. **jQuery UI**
-	1. 
+	1. http://www.guriddo.net/demo/guriddojs/
+	2. http://www.jqplot.com/index.php
+	3. http://www.telerik.com/purchase/kendo-ui
 1. **HTML5 Networking**
 	1. 
 1. **AngularJS**

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Modern Web Development</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+
+<body ng-app="demoApp">
+    <h1>AngularJS</h1>
+
+
+    {{1 + 1}}
+    <br/>
+    <span ng-bind="2+2"></span>
+
+    <div ng-controller="DemoController">
+        {{model.firstName}}
+        <br/>
+        <span ng-bind="model.firstName"></span>
+        <br/>
+        <input type="text" ng-model="model.firstName"/>
+
+        <button ng-click="showMe()">Show me</button>
+        <button ng-click="changeMe()">Change me</button>
+
+        <br/>
+        <input type="text" ng-model="showCat"/>
+        <ul>
+            <li ng-repeat="cat in cats | filter:showCat">
+                <input type="text" ng-model="cat.name"/>
+                {{cat.name}}
+                <br/>
+                {{cats}}
+
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+
+    <script src="demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Modern Web Development</title>
+
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css"/>
+</head>
+
+<body ng-app="demoApp">
+    <h1>Testing AngularJS</h1>
+
+    <hr/>
+    <h2>Message Controller</h2>
+
+    <div ng-controller="MessageController">
+        Message: {{message}}
+    </div>
+
+    <hr/>
+    <h2>Movies Controller</h2>
+
+    <div ng-controller="MoviesController">
+        <ul>
+            <li ng-repeat="movie in movies">
+                {{movie.title}}
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "03_KO",
+  "version": "0.0.0",
+  "homepage": "https://github.com/LearningLine/modern-web-development-demos",
+  "authors": [
+    "Brock Allen <brockallen@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "knockout": "~3.3.0",
+    "knockout.mapping": "~2.0.1"
+  }
+}

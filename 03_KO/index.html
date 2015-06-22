@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.foo{
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-bind='style:{color:name}'>Name: <span data-bind='text:name'></span></div>
+		<div data-bind='css:{foo:isOld}'>Name: <input data-bind="value:name, valueUpdate:'keyup'"></div>
+		<div>Age: <span data-bind='text:age'></span></div>
+		<div data-bind='text:description'></div>
+		
+		<div>
+			<input type="text" data-bind='value:new_name'>
+			<button data-bind='click:addKid'>Add</button>
+		</div>
+		
+		<ul data-bind='foreach:kids'>
+			<li>
+				<button data-bind='click:$parent.removeKid'>Remove</button>
+				<span data-bind='text:$parent.name'></span>
+				<input data-bind='value:$data.name'>
+				<span data-bind='text:$data.name'></span>
+			</li>
+		</ul>
+		<div>
+			<button data-bind='click:getOlder'>Get Older</button>
+			<button data-bind='click:save'>Save</button>
+		</div>
+		<script src="bower_components/knockout/dist/knockout.js"></script>
+		<script src="bower_components/knockout.mapping/knockout.mapping.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

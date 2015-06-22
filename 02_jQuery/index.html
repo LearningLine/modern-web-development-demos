@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--<link rel="stylesheet" href="style.css">-->
+		<style>
+			.highlight {
+				background-color: orange;
+			}
+			
+			li{cursor: pointer;}
+		</style>
+	</head>
+	<body>
+		<h1>Hello jQuery</h1>
+		
+		<ul id='people'>
+			<li data-pk='45' id='brock'>Brock's daughter is named 
+				<span class="female">Mira</span></li>
+			<li data-pk='55' class='female'>Alice</li>
+			<li data-pk='125'>Bob</li>
+			<li data-pk='321' class='female'>Sue</li>
+			<li data-pk='245'>Fred</li>
+		</ul>
+		<div>
+			<input id='name'>
+			<button id='hire'>Hire</button>
+			<button id='fire'>Fire</button>
+		</div>
+		
+		
+		<!--<script src="https://code.jquery.com/jquery.js"></script>-->
+		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src='app.js'></script>
+	</body>
+</html>

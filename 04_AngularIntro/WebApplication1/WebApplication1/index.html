@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body ng-app="myApp">
+    <h1>Hello World</h1>
+
+    <div ng-controller="PersonCtrl">
+        <div ng-show="person.age > 10"
+             title="{{person.name}} is {{person.age}} year">
+            Name: {{ person.name }}
+        </div>
+        <div>Age: <span ng-bind="person.age"></span></div>
+        <div>Age: <input ng-model="person.age" type="number"></div>
+
+        <div>
+            Agree: <input type="checkbox"
+                          ng-model="agree"
+                          ng-true-value="'yes'"
+                          ng-false-value="'no'">
+        </div>
+
+        <div>
+            <input ng-model="new_name">
+            <button ng-click="addKid(new_name)">Add</button>
+        </div>
+
+        <div>Total Kids: <span ng-bind="person.kids.length"></span></div>
+
+        <ul>
+            <li ng-repeat="kid in person.kids">
+                {{$index}}
+                {{person.name}}'s child is:
+                <span ng-bind="kid.name"></span>
+                <button ng-click="removeKid($index)">Remove</button>
+            </li>
+        </ul>
+
+        <div>
+            <button ng-click="saveChanges(person, agree)"
+                    ng-disabled="!canSave()">
+                Save
+            </button>
+        </div>
+
+    </div>
+
+    <script src="js/angular/angular.min.js"></script>
+    <script src="js/app/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body ng-app="app">
+
+    <div ng-controller="PersonCtrl">
+        <div ng-show="error" ng-bind="error"></div>
+        <div>ID: <input ng-model="id"></div>
+        <div>Name: <input ng-model="person.name | foo | uppercase"></div>
+        <div>Age: <input ng-model="person.age"></div>
+        <div><button ng-click="update(person)">Update</button></div>
+    </div>
+
+    <div ng-controller="PersonCtrl">
+        <div ng-show="error" ng-bind="error"></div>
+        <div>ID: <input ng-model="id"></div>
+        <div>Name: <input ng-model="person.name"></div>
+        <div>Age: <input ng-model="person.age"></div>
+        <div><button ng-click="update(person)">Update</button></div>
+    </div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

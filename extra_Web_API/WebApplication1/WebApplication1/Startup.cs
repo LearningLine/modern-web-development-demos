@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Owin;
 using Owin;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 [assembly: OwinStartup(typeof(WebApplication1.Startup))]
 
@@ -13,6 +14,7 @@ namespace WebApplication1
         public void Configuration(IAppBuilder app)
         {
             var config = new HttpConfiguration();
+            config.EnableCors(new EnableCorsAttribute("http://localhost:45633", "*", "*"));
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver =
                 new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
             config.Formatters.Remove(config.Formatters.XmlFormatter);

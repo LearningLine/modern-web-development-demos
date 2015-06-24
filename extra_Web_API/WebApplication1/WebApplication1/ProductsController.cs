@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace WebApplication1
 {
+    //[EnableCors()]
     public class ProductsController : ApiController
     {
         Db.NorthwindDbContext db = new Db.NorthwindDbContext();
@@ -25,7 +27,8 @@ namespace WebApplication1
                 select new Models.ProductModel
                 {
                     Name = p.ProductName,
-                    Price = p.UnitPrice
+                    Price = p.UnitPrice,
+                    Id = p.ProductId
                 };
 
             return Ok(query.ToArray());
@@ -40,7 +43,8 @@ namespace WebApplication1
                 select new Models.ProductModel
                 {
                     Name = p.ProductName,
-                    Price = p.UnitPrice
+                    Price = p.UnitPrice,
+                    Id = p.ProductId
                 };
             
             var prod = query.FirstOrDefault();

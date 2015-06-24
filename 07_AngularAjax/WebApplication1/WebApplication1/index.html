@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        [ng-cloak]{
+            display:none;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+    <div ng-controller="ProductsCtrl">
+        <!--<select ng-model="current">
+            <option ng-repeat="p in products" 
+                    value="{{p.id}}"
+            >{{p.name}}</option>
+        </select>-->
+        <select ng-model="current_id" ng-change="changeCurrent(current_id)"
+                ng-options="p.id as p.name for p in products">
+            <option value="">-none-</option>
+        </select>
+
+        <hr>
+        <!--<ul>
+            <li ng-repeat="p in products" ng-cloak>
+                <span ng-bind="p.name"></span>
+            </li>
+        </ul>-->
+
+        <div ng-show="current_product">
+            <div ng-show="message" ng-bind="message"></div>
+            <div>Name: <input ng-model="current_product.name"></div>
+            <div>Price: <input ng-model="current_product.price"></div>
+            <div><button ng-click="save(current_product)">Save</button></div>
+        </div>
+    </div>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

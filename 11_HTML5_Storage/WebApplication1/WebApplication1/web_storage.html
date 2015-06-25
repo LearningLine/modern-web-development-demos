@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <button id="b">Add 1</button>
+    <div>Current: <span id="val"></span></div>
+    <script>
+        window.addEventListener("storage", showVal, false);
+        document.getElementById('b').addEventListener('click', addOne, false);
+
+        showVal();
+
+        function addOne() {
+            var val = sessionStorage["the_number"];
+            if (!val) {
+                val = 0;
+            }
+
+            val++;
+            sessionStorage["the_number"] = val;
+
+            showVal();
+        }
+
+        function showVal() {
+            document.getElementById('val').innerHTML = sessionStorage["the_number"];
+        }
+    </script>
+</body>
+</html>

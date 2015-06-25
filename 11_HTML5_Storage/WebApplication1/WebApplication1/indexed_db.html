@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <ul></ul>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+        var openRequest = indexedDB.open("MyDb", 1);
+
+        openRequest.onupgradeneeded = function () {
+            console.log("onupgradeneeded");
+
+            var db = openRequest.result;
+
+            var store = db.createObjectStore("PeopleStore", { keyPath: "name" });
+            store.createIndex("AgeIndex", "age", { unique: false });
+
+            var addRequest = store.add({ name: "Brock", age: 23 });
+            //addRequest.onsuccess = function () { };
+            //addRequest.onerror = function () { };
+
+            store.put({ name: "Alice", age: 53 });
+            store.put({ name: "Bob", age: 13 });
+        }
+
+        openRequest.onsuccess = function () {
+            console.log("open success");
+
+            var db = openRequest.result;
+            var tx = db.transaction(["PeopleStore"], "readonly");
+            var store = tx.objectStore("PeopleStore");
+
+            //var getRequest = store.get("Brock");
+            //getRequest.onsuccess = function (e) {
+            //    //var result = e.target.result;
+            //    var result = getRequest.result;
+            //    console.log(result);
+            //}
+
+            //var cursorRequest = store.openCursor(IDBKeyRange.bound('A', 'Z'), "next");
+
+            var index = store.index("AgeIndex");
+            var cursorRequest = index.openCursor(IDBKeyRange.bound(0, 100), "prev");
+            cursorRequest.onsuccess = function () {
+                var cursor = cursorRequest.result;
+                if (cursor) {
+                    console.log(cursor.value);
+                    cursor.continue();
+                }
+                else {
+                    console.log("no more people");
+                }
+            };
+        }
+
+        openRequest.onerror = function (e) {
+            console.log("open error", e.error);
+        }
+    </script>
+</body>
+</html>

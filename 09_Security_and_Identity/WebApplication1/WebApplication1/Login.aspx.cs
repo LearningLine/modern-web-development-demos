@@ -20,11 +20,11 @@ namespace WebApplication1
                 _pwd.Text == "pass")
             {
                 var claims = new Claim[]{
-                    new Claim("name", "Brock Allen"),
                     new Claim("id", "123"),
-                    new Claim("email", "brock@foo.com"),
-                    new Claim("role", "Admin"),
-                    new Claim("role", "Developer"),
+                    //new Claim("name", "Brock Allen"),
+                    //new Claim("email", "brock@foo.com"),
+                    //new Claim("role", "Admin"),
+                    //new Claim("role", "Developer"),
                 };
                 var ci = new ClaimsIdentity(claims, "cookie");
 

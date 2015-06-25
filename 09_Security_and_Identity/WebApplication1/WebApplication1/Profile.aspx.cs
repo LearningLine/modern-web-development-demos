@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using Microsoft.Owin.Security;
 
 namespace WebApplication1
 {
@@ -41,6 +42,15 @@ namespace WebApplication1
                 //mgr.GenerateChangePhoneNumberToken();
                 //mgr.VerifyChangePhoneNumberToken();
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            var props = new AuthenticationProperties
+            {
+                RedirectUri = "/LinkExternalAccount.aspx"
+            };
+            Request.GetOwinContext().Authentication.Challenge(props, "google");
         }
     }
 }

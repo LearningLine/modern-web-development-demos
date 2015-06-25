@@ -39,7 +39,7 @@ namespace WebApplication1
             {
                 var cp = (ClaimsPrincipal)User;
                 var claims = cp.Claims;
-                var data = claims.Select(x => new { x.Type, x.Value });
+                var data = claims.Select(x => new { x.Type, x.Value, x.Issuer });
                 _grid.DataSource = data;
                 _grid.DataBind();
 

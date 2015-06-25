@@ -20,6 +20,9 @@
         <div>
             <asp:Button runat="server" ID="_b" OnClick="_b_Click" text="update profile"   />
         </div>
+        <div>
+            <asp:Button runat="server" ID="Button1" OnClick="Button1_Click" text="Link Google Account To This Account"   />
+        </div>
     </form>
 </body>
 </html>

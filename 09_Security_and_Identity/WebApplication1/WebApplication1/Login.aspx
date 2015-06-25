@@ -17,6 +17,9 @@
         <asp:TextBox TextMode="Password" runat="server" ID="_pwd"></asp:TextBox>
     </div>
         <asp:Button runat="server" ID="_b" OnClick="_b_Click"  Text="Login"/>
+        <ul>
+            <li><a runat="server" href="~/ExternalLogin.aspx?p=google">Google</a></li>
+        </ul>
     </form>
 </body>
 </html>

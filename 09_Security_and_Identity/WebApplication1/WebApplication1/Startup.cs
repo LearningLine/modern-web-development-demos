@@ -28,17 +28,17 @@ namespace WebApplication1
                 if (ctx.Authentication.User != null &&
                     ctx.Authentication.User.Identity.IsAuthenticated)
                 {
-                    var id = ctx.Authentication.User.FindFirst("id").Value;
-                    if (id == "123")
-                    {
-                        var claims_to_add = new Claim[]{
-                            new Claim("name", "Brock Allen"),
-                            new Claim("email", "brock@foo.com"),
-                            new Claim("role", "Admin"),
-                            new Claim("role", "Developer")
-                        };
-                        ctx.Authentication.User.Identities.First().AddClaims(claims_to_add);
-                    }
+                    //var id = ctx.Authentication.User.FindFirst("id").Value;
+                    //if (id == "123")
+                    //{
+                        //var claims_to_add = new Claim[]{
+                        //    new Claim("name", "Brock Allen"),
+                        //    new Claim("email", "brock@foo.com"),
+                        //    new Claim("role", "Admin"),
+                        //    new Claim("role", "Developer")
+                        //};
+                        //ctx.Authentication.User.Identities.First().AddClaims(claims_to_add);
+                    //}
                 }
 
                 await next();

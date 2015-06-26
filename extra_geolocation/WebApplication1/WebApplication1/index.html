@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <span id="lat"></span>
+        <span id="lon"></span>
+    </div>
+    <div id="map" style="width: 640px; height: 480px;"></div>
+
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false">
+    </script>
+
+    <script>
+
+        function updateCoords(c) {
+            document.getElementById('lat').innerHTML = c.latitude;
+            document.getElementById('lon').innerHTML = c.longitude;
+        }
+
+        var handle = navigator.geolocation.watchPosition(function (pos) {
+            console.log(pos);
+            updateCoords(pos.coords);
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 16,
+                center: new google.maps.LatLng(pos.coords.latitude,
+                                               pos.coords.longitude),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+        });
+
+        navigator.geolocation.clearWatch(handle);
+    </script>
+
+
+    <script>
+        //if (navigator.geolocation) {
+        //    navigator.geolocation.getCurrentPosition(function (position) {
+        //        console.log(position);
+        //    });
+        //}
+    </script>
+</body>
+</html>

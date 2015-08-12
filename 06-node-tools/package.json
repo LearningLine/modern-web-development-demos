@@ -1,0 +1,26 @@
+{
+  "name": "05-node-tools",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "bluebird": "2.9.34",
+    "express": "4.13.3",
+    "lodash": "3.10.1"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-jshint": "0.11.2",
+    "grunt-contrib-uglify": "0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-notify": "^0.4.1"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "start": "node server.js",
+    "foo": "echo bar"
+  },
+  "author": "Jason Diamond <jason@diamond.name>",
+  "license": "Closed Source"
+}

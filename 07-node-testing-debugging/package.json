@@ -1,0 +1,23 @@
+{
+  "name": "07-node-testing-debugging",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "mocha",
+    "test-debug": "node debug ./node_modules/.bin/_mocha",
+    "test-debug-gui": "node-debug ./node_modules/.bin/_mocha"
+  },
+  "keywords": [],
+  "author": "Jason Diamond <jason@diamond.name>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.2.5",
+    "sinon": "^1.15.4"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.34"
+  }
+}

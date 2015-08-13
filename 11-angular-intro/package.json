@@ -1,0 +1,15 @@
+{
+  "name": "11-angular-intro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jason Diamond <jason@diamond.name>",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.4"
+  }
+}

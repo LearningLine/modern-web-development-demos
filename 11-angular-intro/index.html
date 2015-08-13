@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS</title>
+    <link rel="stylesheet" href="node_modules/angular/angular-csp.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="ng-cloak">
+    <h1>AngularJS</h1>
+
+    <input type="text" ng-model="firstName">
+
+    <p ng-show="firstName">Hello, <span ng-bind="firstName"></span>!</p>
+
+    <div ng-controller="myController">
+        <ul>
+            <li ng-repeat="person in people"
+                ng-click="selectPerson(person)"
+                ng-class="{ selected: person.selected }"
+                intel-hover="selectable"
+            >
+                {{ person.name }}
+            </li>
+        </ul>
+
+        <p ng-if="selectedPerson">
+            <intel-person-panel
+                person="selectedPerson"
+            ></intel-person-panel>
+        </p>
+    </div>
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="data.js"></script>
+    <script src="hover.js"></script>
+    <script src="personPanel.js"></script>
+</body>
+</html>

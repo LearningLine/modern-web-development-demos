@@ -1,0 +1,7 @@
+.selected {
+    background-color: red;
+}
+
+.selectable {
+    color: green;
+}

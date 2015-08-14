@@ -1,0 +1,7 @@
+- npm i -g karma-cli
+- npm init -y
+- npm i -D karma
+- karma init (hit return)
+- added files to karma.conf.js
+- write code
+- karma start

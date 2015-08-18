@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html ng-app="fcmaApp.Demo1">
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        body{
+            font-family:sans-serif;
+        }
+
+        [ng-cloak]{
+            visibility:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div ng-controller="PersonCtrl"
+         title="{{person.name}} is {{person.age}} years old"
+    >
+        <div ng-if="isValid(person)">Name: <span ng-cloak>{{ person.name }} is a nice guy</span></div>
+        <div>Age: <span ng-bind="person.age"></span></div>
+        <div>Name: <input ng-model="person.name"></div>
+        <div>Age: <input ng-model="person.age"></div>
+        <div>Accept: <input type="checkbox" ng-model="terms"></div>
+        <ul>
+            <li ng-repeat="kid in person.children">
+                <button ng-click="removeKid(person, $index)">remove</button>
+                first: {{$first}},
+                middle: {{$middle}},
+                last: {{$last}}
+                {{$index + 1}}
+                <span ng-bind="kid.name"></span>
+                <input ng-model="kid.name">
+            </li>
+        </ul>
+        <div>
+            <button ng-disabled="!isValid(person)" 
+                    ng-click="save(person, terms)">Update Person</button>
+        </div>
+        
+        <!--<div ng-controller="InnerCtrl">
+            Inner: {{person.name}}
+            <div>Inner Name: <input ng-model="person.name"></div>
+        </div>-->
+    </div>
+   
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

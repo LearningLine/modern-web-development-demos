@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body ng-app="app">
+
+    <div ng-controller="PersonCtrl">
+        <div>
+            Name: <input ng-model="person1.name" />
+        </div>
+        <div>
+            Age: <input ng-model="person1.age" />
+        </div>
+        <hr />
+        <fcma-person person="person1">
+            {{person1.name}}'s spouse is {{person2.name}}
+        </fcma-person>
+        <!--<hr />
+        <fcma-person person="person2">
+            {{person2.name}}'s spouse is {{person1.name}}
+        </fcma-person>-->
+    </div>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

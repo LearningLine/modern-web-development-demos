@@ -1,0 +1,15 @@
+﻿<div>
+    <div>
+        this was the text from outside:
+        <div ng-transclude></div>
+    </div>
+    <div ng-show="showMessage">Happy BDay!</div>
+    <div>Name: {{person.name}}</div>
+    <div>Age: {{person.age}}</div>
+    <div>
+        Name: <input ng-model="person.name" />
+    </div>
+    <div>
+        <button class="get-older">Get Older</button>
+    </div>
+</div>

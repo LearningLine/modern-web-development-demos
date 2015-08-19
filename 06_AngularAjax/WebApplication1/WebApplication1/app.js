@@ -2,7 +2,13 @@
 
 (function () {
 
-    var app = angular.module("app", []);
+    var app = angular.module("app", ["ngResource"]);
+    //app.filter();
+    //app.directive();
+
+    //app.factory();
+    //app.service();
+    //app.provider();
 
     app.config(function ($httpProvider) {
         $httpProvider.interceptors.push(function ($q, $rootScope) {
@@ -22,50 +28,30 @@
                 }
             };
         });
-
     });
 
-    app.factory("ProductsSvc", function ($http) {
-        return {
-            getProducts: function () {
-                return $http.get("/products").then(function (response) {
-                    return response.data;
-                });
-            },
-            getProduct: function (id) {
-                return $http.get("/products/" + id).then(function (response) {
-                    return response.data;
-                });
-            },
-            updateProduct: function (p) {
-                return $http.put("/products/" + p.id, p).then(function () {
-                });
+    app.factory("ProductsSvc", function ($resource) {
+        return $resource("/products/:id", {id:"@id"} , {
+            'update':{
+                method:'PUT'
             }
-        };
+        });
     });
 
     app.controller("ProductsCtrl", function ($scope, ProductsSvc) {
 
-        ProductsSvc.getProducts().then(function (products) {
-            $scope.products = products;
-        });
+        $scope.products = ProductsSvc.query();
+        console.log($scope.products.length);
 
         $scope.edit = function (p) {
-
             $scope.message = null;
-
-            ProductsSvc.getProduct(p.id).then(function (product) {
-                $scope.current = product;
-            });
+            $scope.current = ProductsSvc.get({id:p.id});
         }
 
         $scope.save = function (p) {
-
-            ProductsSvc.updateProduct(p).then(function () {
-                $scope.current = null;
-                $scope.message = "Product ID: " + p.id + " updated";
-            });
-
+            p.$update();
+            $scope.current = null;
+            $scope.message = "Product ID: " + p.id + " updated";
         }
     });
 

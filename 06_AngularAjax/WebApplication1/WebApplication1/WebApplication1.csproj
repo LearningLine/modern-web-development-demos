@@ -103,7 +103,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="angular-resource.min.js" />
     <Content Include="angular.min.js" />
+    <Content Include="app - Copy %282%29.js" />
+    <Content Include="app - Copy %283%29.js" />
     <Content Include="app - Copy.js" />
     <Content Include="app.js" />
     <Content Include="index.html" />

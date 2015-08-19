@@ -1,0 +1,16 @@
+﻿<div class="products-page">
+    <div ng-show="error" ng-bind="error"></div>
+
+    <div ng-show="message" ng-bind="message"></div>
+
+    <div ng-hide="products.length">
+        No products...
+    </div>
+
+    <ul>
+        <li ng-repeat="p in products">
+            <span ng-bind="p.name" ng-click="edit(p)"></span>
+            <a ng-href="#/products/{{p.id}}">edit</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <div>
+        Name: <input id="name" />
+    </div>
+    <div id="message"></div>
+
+    <script>
+        var store = sessionStorage;
+
+        window.addEventListener("storage", function (e) {
+            console.log(e.key, e.oldValue, e.newValue);
+            update();
+        }, false);
+
+        document.getElementById("name").addEventListener("input", function (e) {
+            store.setItem("theName", JSON.stringify({ name: e.target.value, age: 5 }));
+            //store.theName = e.target.value;
+        });
+
+        function update() {
+            var theName = store.getItem("theName");
+            if (theName) {
+                var person = JSON.parse(theName);
+                document.getElementById("message").innerHTML = "Your name is: " + person.name + ", " + person.age;
+            }
+            else {
+                document.getElementById("message").innerHTML = "No name";
+            }
+        }
+        update();
+
+        //var theName = store.getItem("theName");
+        //if (theName) {
+        //    var person = JSON.parse(theName);
+        //    document.getElementById("message").innerHTML = "Your name is: " + person.name + ", " + person.age;
+        //}
+        //else {
+        //    document.getElementById("message").innerHTML = "No name";
+        //}
+    </script>
+
+</body>
+</html>

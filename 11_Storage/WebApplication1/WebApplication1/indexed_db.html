@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <script>
+        var openRequest = indexedDB.open("PeopleDb", 1);
+        openRequest.onupgradeneeded = function () {
+            console.log("onupgradeneeded");
+
+            var db = openRequest.result;
+            var store = db.createObjectStore("PeopleStore", { keyPath: 'name' });
+            store.createIndex("AgeIndex", "age", { unique: false });
+
+            var putRequest = store.put({ name: "Brock", age: 23 });
+            store.put({ name: "Alice", age: 53 });
+            store.put({ name: "Bob", age: 13 });
+        }
+        openRequest.onsuccess = function () {
+            console.log("open success");
+
+            var db = openRequest.result;
+            var tx = db.transaction(["PeopleStore"], "readonly");
+            var store = tx.objectStore("PeopleStore");
+
+            //var cursorRequest = store.openCursor();
+
+            var index = store.index("AgeIndex");
+            var cursorRequest = index.openCursor(IDBKeyRange.bound(20, 40), "prev");
+            cursorRequest.onsuccess = function () {
+                var cursor = cursorRequest.result;
+                if (cursor) {
+                    var person = cursor.value;
+                    console.log(person);
+                    cursor.continue();
+                }
+                else {
+                    console.log("at the end of people")
+                }
+            }
+
+            //var getRequest = store.get("Brock");
+            //getRequest.onsuccess = function () {
+            //    console.log(getRequest.result);
+            //}
+        }
+        openRequest.onerror = function () {
+            console.log("open error");
+        }
+    </script>
+</body>
+</html>

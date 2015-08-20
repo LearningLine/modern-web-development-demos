@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@if(Request.IsAuthenticated)
+{
+    <h2>Logged in</h2>
+    <div><a href="~/Account/Logout">Logout</a></div>
+    <h3>Claims</h3>
+    <dl>
+        @foreach (var claim in ((System.Security.Claims.ClaimsPrincipal)User).Claims)
+        {
+            <dt>@claim.Type</dt>
+            <dd>@claim.Value</dd>
+        }
+    </dl>
+    <button id="api1">Call API1</button>
+    <script>
+        var token = '@ViewBag.AccessToken';
+
+        function callApi1() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/api/api1", true);
+            xhr.onload = function () {
+                console.log(xhr.response);
+            }
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+            xhr.send();
+        }
+        document.getElementById("api1").addEventListener("click", callApi1, false);
+    </script>
+}
+else
+{
+    <h2>Not Logged in</h2>
+    <div><a href="~/Account/Login">Login</a></div>
+}
+

@@ -1,0 +1,41 @@
+﻿@corp_color:#345;
+@corp_font_size:13pt;
+
+.corp_font(@font_size:@corp_font_size) {
+    font-family:sans-serif;
+    font-size:@font_size;
+}
+
+.corp_colors{
+    color:@corp_color;
+}
+
+body {
+    &:extend(.corp_colors);
+    .corp_font;
+}
+
+h1{
+    .corp_font(@corp_font_size + 2);
+    color:@corp_color + #111;
+}
+a{
+    color:lighten(@corp_color, 20%);
+}
+
+.customer-page {
+    font-size:12pt;
+    color:pink;
+
+    .menu {
+        font-size:10pt;
+
+        a {
+            color:red;
+
+            &:visited{
+                color:pink;
+            }
+        }
+    }
+}

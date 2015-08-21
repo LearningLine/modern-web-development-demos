@@ -1,0 +1,10 @@
+﻿CACHE MANIFEST
+# v7
+CACHE:
+/styles.css
+
+NETWORK:
+/app.js
+
+FALLBACK:
+/default2.aspx /fallback.htm

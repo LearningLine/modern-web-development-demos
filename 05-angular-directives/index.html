@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Directives</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+  <button ng-click="showButton = !showButton">Show Button</button>
+
+  <input type="text" ng-model="myData.customButtonText">
+
+  <div ng-if="showButton">
+    <my-button text="myData.customButtonText" click="customClickFunction()"></my-button>
+  </div>
+
+  <!-- <script src="jquery.js"></script> -->
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

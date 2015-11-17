@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS</title>
+  <style>
+    *[ng-cloak] {
+      display: none;
+    }
+
+    .ng-scope {
+      /*border: 1px solid red;*/
+    }
+  </style>
+</head>
+<body ng-cloak ng-controller="MyController">
+  <select
+    ng-options="person as person.name for person in people track by person.id"
+    ng-model="selectedPerson"
+    ng-change="showPerson()"
+  >
+  </select>
+  <ul>
+    <li ng-repeat="thing in things">{{ thing }}</li>
+  </ul>
+  <p><input type="text" ng-model="name"></p>
+  <p ng-if="name">Hello, {{ name }}!</p>
+  <p><button ng-click="submitName()">Submit</button></p>
+
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <script src="people.js"></script>
+</body>
+</html>

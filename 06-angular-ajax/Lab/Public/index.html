@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Movies</title>
+    <link href="/CSS/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="myApp">
+    <div class="container">
+        <h1>Movie Manager</h1>
+        
+        <div ng-controller="MoviesCtrl">
+            <div ng-include="'/templates/movieList.html'"
+                 ng-hide="selectedMovie"></div>
+            <div ng-include="'/templates/movieEditor.html'"
+                 ng-show="selectedMovie"></div>
+        </div>
+    </div>
+
+    <script src="/Libs/angular/angular.js"></script>
+    <script src="/App/App.js"></script>
+    <script src="/App/MyData.js"></script>
+</body>
+</html>

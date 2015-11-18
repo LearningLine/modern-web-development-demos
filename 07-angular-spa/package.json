@@ -1,0 +1,14 @@
+{
+  "name": "07-angular-spa",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jason Diamond <jason@diamond.name>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.13.3"
+  }
+}

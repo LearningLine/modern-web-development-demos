@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajax</title>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+  <h1>Ajax</h1>
+
+  <input type="text" ng-model="newPersonName">
+
+  <button ng-click="createPerson()">Post Data</button>
+
+  <button ng-click="loadData()">Load Data</button>
+  <button ng-click="loadDataWithResource()">Load Data with $resource</button>
+
+  <ul>
+    <li ng-repeat="person in people">{{ person.name }}</li>
+  </ul>
+
+  <script src="angular.min.js"></script>
+  <script src="angular-resource.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

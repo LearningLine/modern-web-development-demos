@@ -5,9 +5,23 @@
   <title>SPAs</title>
 </head>
 <body ng-app="myApp" ng-controller="myController">
+  <base href="/">
+
+  <!-- header -->
   <h1>SPAs</h1>
 
+  <!-- nav section on left -->
+  <nav>
+  </nav>
+
+  <!-- main content on right -->
+  <ng-view></ng-view>
+
+  <!-- footer -->
+  <footer></footer>
+
   <script src="angular.min.js"></script>
+  <script src="angular-route.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

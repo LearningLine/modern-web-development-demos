@@ -1,0 +1,12 @@
+﻿<nav class="navbar navbar-default" ng-controller="UserCtrl">
+    <a href="/" class="navbar-brand">Movie Review App</a>
+    <ul class="nav navbar-nav">
+        <li></li>
+        <li><a href="#/movies">Movies</a></li>
+        <li><a href="#/reviews">Reviews</a></li>
+        <li ng-hide="user.isLoggedIn"><a href="#/login">Login</a></li>
+        <li ng-hide="!user.isLoggedIn"><a href="#/logout">Logout</a></li>
+    </ul>
+    <div class="navbar-text" ng-hide="!user.isLoggedIn">Logged in as: {{user.username}}</div>
+    <!--<div class="navbar-text" ng-hide="!user.isLoggedIn">Access Token: {{user.token}}</div>-->
+</nav>

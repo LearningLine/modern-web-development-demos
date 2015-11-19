@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EFB3B8F1-4A8B-4B0B-8B8F-0AF16E554DF2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebAPISecurity</RootNamespace>
+    <AssemblyName>WebAPISecurity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.1.0\lib\net45\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\app\images\star-empty.png" />
+    <Content Include="assets\app\images\star.png" />
+    <Content Include="assets\libs\angular\angular-route.js" />
+    <Content Include="assets\templates\movie.html" />
+    <Content Include="assets\templates\nav.html" />
+    <Content Include="assets\templates\logout.html" />
+    <Content Include="assets\templates\login.html" />
+    <Content Include="assets\templates\newreview.html" />
+    <Content Include="assets\templates\moviereviews.html" />
+    <Content Include="assets\templates\stars.html" />
+    <Content Include="assets\templates\reviews.html" />
+    <Content Include="assets\templates\movies.html" />
+    <Content Include="assets\templates\home.html" />
+    <Content Include="packages.config" />
+    <Content Include="assets\libs\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\libs\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\libs\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="data\Countries.json" />
+    <Content Include="data\Directors.json" />
+    <Content Include="data\Genres.json" />
+    <Content Include="data\Movies.json" />
+    <Content Include="data\Reviews.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\app\app.less" />
+    <Content Include="assets\app\app.css">
+      <DependentUpon>app.less</DependentUpon>
+    </Content>
+    <Content Include="assets\app\app.js" />
+    <Content Include="assets\app\app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
+    <Content Include="assets\app\images\movie.png" />
+    <Content Include="assets\app\images\review.png" />
+    <Content Include="assets\libs\angular\angular.js" />
+    <Content Include="assets\libs\bootstrap\css\flatly.bootstrap.min.css" />
+    <Content Include="assets\libs\bootstrap\css\readable.bootstrap.min.css" />
+    <Content Include="data\Posters\10.jpg" />
+    <Content Include="data\Posters\1900.jpg" />
+    <Content Include="data\Posters\A.I..jpg" />
+    <Content Include="data\Posters\AboutSchmidt.jpg" />
+    <Content Include="data\Posters\ABriefHistoryofTime.jpg" />
+    <Content Include="data\Posters\AbsenceofMalice.jpg" />
+    <Content Include="data\Posters\AClockworkOrange.jpg" />
+    <Content Include="data\Posters\Adam%27sRib.jpg" />
+    <Content Include="data\Posters\Adaptation.jpg" />
+    <Content Include="data\Posters\Affliction.jpg" />
+    <Content Include="data\Posters\AGeisha.jpg" />
+    <Content Include="data\Posters\Aguirre,theWrathofGod.jpg" />
+    <Content Include="data\Posters\Airplane!.jpg" />
+    <Content Include="data\Posters\Aladdin.jpg" />
+    <Content Include="data\Posters\ALeagueofTheirOwn.jpg" />
+    <Content Include="data\Posters\AlexanderNevsky.jpg" />
+    <Content Include="data\Posters\Alice%27sRestaurant.jpg" />
+    <Content Include="data\Posters\AliceDoesn%27tLiveHereAnymore.jpg" />
+    <Content Include="data\Posters\Aliens.jpg" />
+    <Content Include="data\Posters\AllAboutEve.jpg" />
+    <Content Include="data\Posters\AllAboutMyMother.jpg" />
+    <Content Include="data\Posters\AllQuietontheWesternFront.jpg" />
+    <Content Include="data\Posters\AllThatHeavenAllows.jpg" />
+    <Content Include="data\Posters\AlltheKing%27sMen.jpg" />
+    <Content Include="data\Posters\AllthePresident%27sMen.jpg" />
+    <Content Include="data\Posters\ALoveinGermany.jpg" />
+    <Content Include="data\Posters\Amadeus.jpg" />
+    <Content Include="data\Posters\Amarcord.jpg" />
+    <Content Include="data\Posters\AmericanGraffiti.jpg" />
+    <Content Include="data\Posters\AmericanMovie.jpg" />
+    <Content Include="data\Posters\AmoresPerros.jpg" />
+    <Content Include="data\Posters\Amélie.jpg" />
+    <Content Include="data\Posters\AnAmericaninParis.jpg" />
+    <Content Include="data\Posters\Anastasia.jpg" />
+    <Content Include="data\Posters\AnatomyofaMurder.jpg" />
+    <Content Include="data\Posters\AnnaandtheKingofSiam.jpg" />
+    <Content Include="data\Posters\AnnieHall.jpg" />
+    <Content Include="data\Posters\ANouslaLiberte.jpg" />
+    <Content Include="data\Posters\ApocalypseNow.jpg" />
+    <Content Include="data\Posters\Apollo13.jpg" />
+    <Content Include="data\Posters\AshesandDiamonds.jpg" />
+    <Content Include="data\Posters\ASlightCaseofMurder.jpg" />
+    <Content Include="data\Posters\AStreetcarNamedDesire.jpg" />
+    <Content Include="data\Posters\AtlanticCity.jpg" />
+    <Content Include="data\Posters\AuRevoirLesEnfants.jpg" />
+    <Content Include="data\Posters\AWalkintheSun.jpg" />
+    <Content Include="data\Posters\Babette%27sFeast.jpg" />
+    <Content Include="data\Posters\BabyDoll.jpg" />
+    <Content Include="data\Posters\BacktotheFuture.jpg" />
+    <Content Include="data\Posters\BadDayatBlackRock.jpg" />
+    <Content Include="data\Posters\Badlands.jpg" />
+    <Content Include="data\Posters\BallofFire.jpg" />
+    <Content Include="data\Posters\Bambi.jpg" />
+    <Content Include="data\Posters\BangtheDrumSlowly.jpg" />
+    <Content Include="data\Posters\Barfly.jpg" />
+    <Content Include="data\Posters\BarryLyndon.jpg" />
+    <Content Include="data\Posters\BartonFink.jpg" />
+    <Content Include="data\Posters\BeautifulPeople.jpg" />
+    <Content Include="data\Posters\BeautyandtheBeast.jpg" />
+    <Content Include="data\Posters\BedandBoard.jpg" />
+    <Content Include="data\Posters\Beetlejuice.jpg" />
+    <Content Include="data\Posters\BeforeNightFalls.jpg" />
+    <Content Include="data\Posters\BeingJohnMalkovich.jpg" />
+    <Content Include="data\Posters\BeingThere.jpg" />
+    <Content Include="data\Posters\BelledeJour.jpg" />
+    <Content Include="data\Posters\Ben-Hur.jpg" />
+    <Content Include="data\Posters\BeverlyHillsCop.jpg" />
+    <Content Include="data\Posters\BigNight.jpg" />
+    <Content Include="data\Posters\BillyLiar.jpg" />
+    <Content Include="data\Posters\BiloxiBlues.jpg" />
+    <Content Include="data\Posters\Birdy.jpg" />
+    <Content Include="data\Posters\BlackNarcissus.jpg" />
+    <Content Include="data\Posters\BlackOrpheus.jpg" />
+    <Content Include="data\Posters\BlackRobe.jpg" />
+    <Content Include="data\Posters\BlazingSaddles.jpg" />
+    <Content Include="data\Posters\BloodySunday.jpg" />
+    <Content Include="data\Posters\Blow-Up.jpg" />
+    <Content Include="data\Posters\BlueCollar.jpg" />
+    <Content Include="data\Posters\BlueVelvet.jpg" />
+    <Content Include="data\Posters\Bob&amp;Carol&amp;Ted&amp;Alice.jpg" />
+    <Content Include="data\Posters\BobleFlambeur.jpg" />
+    <Content Include="data\Posters\BodyHeat.jpg" />
+    <Content Include="data\Posters\BonnieandClyde.jpg" />
+    <Content Include="data\Posters\BoogieNights.jpg" />
+    <Content Include="data\Posters\BornontheFourthofJuly.jpg" />
+    <Content Include="data\Posters\BornYesterday.jpg" />
+    <Content Include="data\Posters\BoundforGlory.jpg" />
+    <Content Include="data\Posters\BoysDon%27tCry.jpg" />
+    <Content Include="data\Posters\BoyzNtheHood.jpg" />
+    <Content Include="data\Posters\Brazil.jpg" />
+    <Content Include="data\Posters\BreakerMorant.jpg" />
+    <Content Include="data\Posters\BreakingAway.jpg" />
+    <Content Include="data\Posters\BreakingtheWaves.jpg" />
+    <Content Include="data\Posters\Breathless.jpg" />
+    <Content Include="data\Posters\BriefEncounter.jpg" />
+    <Content Include="data\Posters\BringingUpBaby.jpg" />
+    <Content Include="data\Posters\BroadcastNews.jpg" />
+    <Content Include="data\Posters\Brother%27sKeeper.jpg" />
+    <Content Include="data\Posters\BullDurham.jpg" />
+    <Content Include="data\Posters\Bullitt.jpg" />
+    <Content Include="data\Posters\BusStop.jpg" />
+    <Content Include="data\Posters\ButchCassidyandtheSundanceKid.jpg" />
+    <Content Include="data\Posters\ByeByeBrasil.jpg" />
+    <Content Include="data\Posters\Cabaret.jpg" />
+    <Content Include="data\Posters\CaliforniaSuite.jpg" />
+    <Content Include="data\Posters\Calle54.jpg" />
+    <Content Include="data\Posters\Camelot.jpg" />
+    <Content Include="data\Posters\Camille.jpg" />
+    <Content Include="data\Posters\CaptainsCourageous.jpg" />
+    <Content Include="data\Posters\CarmenJones.jpg" />
+    <Content Include="data\Posters\CarnalKnowledge.jpg" />
+    <Content Include="data\Posters\Casablanca.jpg" />
+    <Content Include="data\Posters\Catch-22.jpg" />
+    <Content Include="data\Posters\CatonaHotTinRoof.jpg" />
+    <Content Include="data\Posters\Cavalcade.jpg" />
+    <Content Include="data\Posters\ChanIsMissing.jpg" />
+    <Content Include="data\Posters\ChariotsofFire.jpg" />
+    <Content Include="data\Posters\CharleyVarrick.jpg" />
+    <Content Include="data\Posters\Chicago.jpg" />
+    <Content Include="data\Posters\ChickenRun.jpg" />
+    <Content Include="data\Posters\Chinatown.jpg" />
+    <Content Include="data\Posters\ChloëintheAfternoon.jpg" />
+    <Content Include="data\Posters\Chocolat.jpg" />
+    <Content Include="data\Posters\CitizenKane.jpg" />
+    <Content Include="data\Posters\Claire%27sKnee.jpg" />
+    <Content Include="data\Posters\Close-Up.jpg" />
+    <Content Include="data\Posters\CloseEncountersoftheThirdKind.jpg" />
+    <Content Include="data\Posters\Clueless.jpg" />
+    <Content Include="data\Posters\CoalMiner%27sDaughter.jpg" />
+    <Content Include="data\Posters\ComeBack,LittleSheba.jpg" />
+    <Content Include="data\Posters\ComingHome.jpg" />
+    <Content Include="data\Posters\Contempt.jpg" />
+    <Content Include="data\Posters\CoolHandLuke.jpg" />
+    <Content Include="data\Posters\CriesandWhispers.jpg" />
+    <Content Include="data\Posters\Crossfire.jpg" />
+    <Content Include="data\Posters\Crumb.jpg" />
+    <Content Include="data\Posters\Cry,theBelovedCountry.jpg" />
+    <Content Include="data\Posters\DamnYankees.jpg" />
+    <Content Include="data\Posters\DancewithaStranger.jpg" />
+    <Content Include="data\Posters\DangerousLiaisons.jpg" />
+    <Content Include="data\Posters\DarkEyes.jpg" />
+    <Content Include="data\Posters\DarkVictory.jpg" />
+    <Content Include="data\Posters\Darling.jpg" />
+    <Content Include="data\Posters\DavidCopperfield.jpg" />
+    <Content Include="data\Posters\DavidHoltzman%27sDiary.jpg" />
+    <Content Include="data\Posters\DawnoftheDead.jpg" />
+    <Content Include="data\Posters\DayforNight.jpg" />
+    <Content Include="data\Posters\DaysofHeaven.jpg" />
+    <Content Include="data\Posters\DaysofWineandRoses.jpg" />
+    <Content Include="data\Posters\DeadCalm.jpg" />
+    <Content Include="data\Posters\DeadEnd.jpg" />
+    <Content Include="data\Posters\DeadManWalking.jpg" />
+    <Content Include="data\Posters\DeadofNight.jpg" />
+    <Content Include="data\Posters\DeadRingers.jpg" />
+    <Content Include="data\Posters\DeathinVenice.jpg" />
+    <Content Include="data\Posters\Deliverance.jpg" />
+    <Content Include="data\Posters\DesperatelySeekingSusan.jpg" />
+    <Content Include="data\Posters\DestryRidesAgain.jpg" />
+    <Content Include="data\Posters\Diabolique.jpg" />
+    <Content Include="data\Posters\DialMforMurder.jpg" />
+    <Content Include="data\Posters\DiaryofaChambermaid.jpg" />
+    <Content Include="data\Posters\DiaryofaCountryPriest.jpg" />
+    <Content Include="data\Posters\DieHard.jpg" />
+    <Content Include="data\Posters\Diner.jpg" />
+    <Content Include="data\Posters\DinneratEight.jpg" />
+    <Content Include="data\Posters\DirtyHarry.jpg" />
+    <Content Include="data\Posters\DirtyRottenScoundrels.jpg" />
+    <Content Include="data\Posters\Disraeli.jpg" />
+    <Content Include="data\Posters\Diva.jpg" />
+    <Content Include="data\Posters\DoctorZhivago.jpg" />
+    <Content Include="data\Posters\DonnieBrasco.jpg" />
+    <Content Include="data\Posters\DotheRightThing.jpg" />
+    <Content Include="data\Posters\Dr.JekyllandMr.Hyde.jpg" />
+    <Content Include="data\Posters\DrowningbyNumbers.jpg" />
+    <Content Include="data\Posters\EastofEden.jpg" />
+    <Content Include="data\Posters\EatDrinkManWoman.jpg" />
+    <Content Include="data\Posters\EightMenOut.jpg" />
+    <Content Include="data\Posters\Fanny&amp;Alexander.jpg" />
+    <Content Include="data\Posters\Farewell,MyConcubine.jpg" />
+    <Content Include="data\Posters\FarfromHeaven.jpg" />
+    <Content Include="data\Posters\Fargo.jpg" />
+    <Content Include="data\Posters\Fast,Cheap&amp;OutofControl.jpg" />
+    <Content Include="data\Posters\FastRunner%28Atanarjuat%29.jpg" />
+    <Content Include="data\Posters\FatheroftheBride.jpg" />
+    <Content Include="data\Posters\FistinHisPocket.jpg" />
+    <Content Include="data\Posters\ForWhomtheBellTolls.jpg" />
+    <Content Include="data\Posters\FriendlyPersuasion.jpg" />
+    <Content Include="data\Posters\GangsofNewYork.jpg" />
+    <Content Include="data\Posters\GhostWorld.jpg" />
+    <Content Include="data\Posters\GosfordPark.jpg" />
+    <Content Include="data\Posters\GreatExpectations.jpg" />
+    <Content Include="data\Posters\GreenforDanger.jpg" />
+    <Content Include="data\Posters\Hamlet.jpg" />
+    <Content Include="data\Posters\Happiness.jpg" />
+    <Content Include="data\Posters\HarlanCounty,USA.jpg" />
+    <Content Include="data\Posters\HeavyTraffic.jpg" />
+    <Content Include="data\Posters\HenryFool.jpg" />
+    <Content Include="data\Posters\HereComesMr.Jordan.jpg" />
+    <Content Include="data\Posters\HighandLow%28Japan%29.jpg" />
+    <Content Include="data\Posters\HighArt.jpg" />
+    <Content Include="data\Posters\HoopDreams.jpg" />
+    <Content Include="data\Posters\HopeandGlory.jpg" />
+    <Content Include="data\Posters\HouseholdSaints.jpg" />
+    <Content Include="data\Posters\HusbandsandWives.jpg" />
+    <Content Include="data\Posters\IKnowWhereI%27mGoing!.jpg" />
+    <Content Include="data\Posters\IlPostino%28ThePostman%29.jpg" />
+    <Content Include="data\Posters\InherittheWind.jpg" />
+    <Content Include="data\Posters\InternalAffairs.jpg" />
+    <Content Include="data\Posters\IntheBedroom.jpg" />
+    <Content Include="data\Posters\IRememberMama.jpg" />
+    <Content Include="data\Posters\It%27saGift.jpg" />
+    <Content Include="data\Posters\JailhouseRock.jpg" />
+    <Content Include="data\Posters\JeandeFlorette.jpg" />
+    <Content Include="data\Posters\JerryMaguire.jpg" />
+    <Content Include="data\Posters\JudgmentatNuremberg.jpg" />
+    <Content Include="data\Posters\KnifeintheWater.jpg" />
+    <Content Include="data\Posters\L%27Aged%27Or.jpg" />
+    <Content Include="data\Posters\L%27Argent.jpg" />
+    <Content Include="data\Posters\L%27Atalante.jpg" />
+    <Content Include="data\Posters\L%27Avventura.jpg" />
+    <Content Include="data\Posters\L.A.Confidential.jpg" />
+    <Content Include="data\Posters\LaCérémonie.jpg" />
+    <Content Include="data\Posters\LaDolceVita.jpg" />
+    <Content Include="data\Posters\Ladybird,Ladybird.jpg" />
+    <Content Include="data\Posters\LaFemmeInfidèle.jpg" />
+    <Content Include="data\Posters\LaFemmeNikita.jpg" />
+    <Content Include="data\Posters\Lamerica.jpg" />
+    <Content Include="data\Posters\LeavingLasVegas.jpg" />
+    <Content Include="data\Posters\LeBeauMariage.jpg" />
+    <Content Include="data\Posters\LeBoucher.jpg" />
+    <Content Include="data\Posters\LesMiserables.jpg" />
+    <Content Include="data\Posters\LifeWithFather.jpg" />
+    <Content Include="data\Posters\LikeWaterforChocolate.jpg" />
+    <Content Include="data\Posters\Lili.jpg" />
+    <Content Include="data\Posters\LittleWomen.jpg" />
+    <Content Include="data\Posters\LivinginOblivion.jpg" />
+    <Content Include="data\Posters\LoneStar.jpg" />
+    <Content Include="data\Posters\LoveAffair.jpg" />
+    <Content Include="data\Posters\LovelyandAmazing.jpg" />
+    <Content Include="data\Posters\MajorBarbara.jpg" />
+    <Content Include="data\Posters\MalcolmX.jpg" />
+    <Content Include="data\Posters\MeanStreets.jpg" />
+    <Content Include="data\Posters\MisterRoberts.jpg" />
+    <Content Include="data\Posters\MonOncle.jpg" />
+    <Content Include="data\Posters\Monsters,Inc..jpg" />
+    <Content Include="data\Posters\Moonstruck.jpg" />
+    <Content Include="data\Posters\Mother.jpg" />
+    <Content Include="data\Posters\Mrs.Miniver.jpg" />
+    <Content Include="data\Posters\MulhollandDr..jpg" />
+    <Content Include="data\Posters\My20thCentury.jpg" />
+    <Content Include="data\Posters\MyDarlingClementine.jpg" />
+    <Content Include="data\Posters\MyNightatMaud%27s.jpg" />
+    <Content Include="data\Posters\Nashville.jpg" />
+    <Content Include="data\Posters\NationalLampoon%27sAnimalHouse.jpg" />
+    <Content Include="data\Posters\NightoftheLivingDead.jpg" />
+    <Content Include="data\Posters\Nobody%27sFool.jpg" />
+    <Content Include="data\Posters\Notorious.jpg" />
+    <Content Include="data\Posters\Now,Voyager.jpg" />
+    <Content Include="data\Posters\Oklahoma!.jpg" />
+    <Content Include="data\Posters\One,Two,Three.jpg" />
+    <Content Include="data\Posters\OneFlewOvertheCuckoo%27sNest.jpg" />
+    <Content Include="data\Posters\OneNightofLove.jpg" />
+    <Content Include="data\Posters\OnlyAngelsHaveWings.jpg" />
+    <Content Include="data\Posters\OntheBeach.jpg" />
+    <Content Include="data\Posters\OrdinaryPeople.jpg" />
+    <Content Include="data\Posters\Othello.jpg" />
+    <Content Include="data\Posters\OurTown.jpg" />
+    <Content Include="data\Posters\Paisan.jpg" />
+    <Content Include="data\Posters\Persona.jpg" />
+    <Content Include="data\Posters\Persuasion.jpg" />
+    <Content Include="data\Posters\Ponette.jpg" />
+    <Content Include="data\Posters\PrideandPrejudice.jpg" />
+    <Content Include="data\Posters\PulpFiction.jpg" />
+    <Content Include="data\Posters\Red.jpg" />
+    <Content Include="data\Posters\RichardIII.jpg" />
+    <Content Include="data\Posters\Roger&amp;Me.jpg" />
+    <Content Include="data\Posters\RomeoandJuliet.jpg" />
+    <Content Include="data\Posters\RugglesofRedGap.jpg" />
+    <Content Include="data\Posters\Rushmore.jpg" />
+    <Content Include="data\Posters\RuthlessPeople.jpg" />
+    <Content Include="data\Posters\Salesman.jpg" />
+    <Content Include="data\Posters\SaturdayNightandSundayMorning.jpg" />
+    <Content Include="data\Posters\SavingPrivateRyan.jpg" />
+    <Content Include="data\Posters\SecretHonor.jpg" />
+    <Content Include="data\Posters\SecretsandLies.jpg" />
+    <Content Include="data\Posters\SexyBeast.jpg" />
+    <Content Include="data\Posters\ShakespeareinLove.jpg" />
+    <Content Include="data\Posters\Sherman%27sMarch.jpg" />
+    <Content Include="data\Posters\ShipofFools.jpg" />
+    <Content Include="data\Posters\Shrek.jpg" />
+    <Content Include="data\Posters\Spartacus.jpg" />
+    <Content Include="data\Posters\SpiritedAway.jpg" />
+    <Content Include="data\Posters\Stalag17.jpg" />
+    <Content Include="data\Posters\StopMakingSense.jpg" />
+    <Content Include="data\Posters\Storytelling.jpg" />
+    <Content Include="data\Posters\SunsetBoulevard.jpg" />
+    <Content Include="data\Posters\SweptAway.jpg" />
+    <Content Include="data\Posters\SwingTime.jpg" />
+    <Content Include="data\Posters\TalktoHer.jpg" />
+    <Content Include="data\Posters\TasteofCherry.jpg" />
+    <Content Include="data\Posters\TenderMercies.jpg" />
+    <Content Include="data\Posters\ThatObscureObjectofDesire.jpg" />
+    <Content Include="data\Posters\The400Blows.jpg" />
+    <Content Include="data\Posters\TheAdjuster.jpg" />
+    <Content Include="data\Posters\TheAdventuresofRobinHood.jpg" />
+    <Content Include="data\Posters\TheAfricanQueen.jpg" />
+    <Content Include="data\Posters\TheAmericanFriend.jpg" />
+    <Content Include="data\Posters\TheAmericanizationofEmily.jpg" />
+    <Content Include="data\Posters\TheApartment.jpg" />
+    <Content Include="data\Posters\TheApostle.jpg" />
+    <Content Include="data\Posters\TheAsphaltJungle.jpg" />
+    <Content Include="data\Posters\TheAwfulTruth.jpg" />
+    <Content Include="data\Posters\TheBadandtheBeautiful.jpg" />
+    <Content Include="data\Posters\TheBaker%27sWife.jpg" />
+    <Content Include="data\Posters\TheBalladofCableHogue.jpg" />
+    <Content Include="data\Posters\TheBandWagon.jpg" />
+    <Content Include="data\Posters\TheBankDick.jpg" />
+    <Content Include="data\Posters\TheBattleofAlgiers.jpg" />
+    <Content Include="data\Posters\TheBestYearsofOurLives.jpg" />
+    <Content Include="data\Posters\TheBicycleThief.jpg" />
+    <Content Include="data\Posters\TheBigChill.jpg" />
+    <Content Include="data\Posters\TheBigClock.jpg" />
+    <Content Include="data\Posters\TheBigDealonMadonnaStreet.jpg" />
+    <Content Include="data\Posters\TheBigHeat.jpg" />
+    <Content Include="data\Posters\TheBigRedOne.jpg" />
+    <Content Include="data\Posters\TheBigSky.jpg" />
+    <Content Include="data\Posters\TheBigSleep.jpg" />
+    <Content Include="data\Posters\TheBirds.jpg" />
+    <Content Include="data\Posters\TheBreakfastClub.jpg" />
+    <Content Include="data\Posters\TheBrideWoreBlack.jpg" />
+    <Content Include="data\Posters\TheBridgeontheRiverKwai.jpg" />
+    <Content Include="data\Posters\TheBuddyHollyStory.jpg" />
+    <Content Include="data\Posters\TheButcherBoy.jpg" />
+    <Content Include="data\Posters\TheCaineMutiny.jpg" />
+    <Content Include="data\Posters\TheCelebration.jpg" />
+    <Content Include="data\Posters\TheCiderHouseRules.jpg" />
+    <Content Include="data\Posters\TheCitadel.jpg" />
+    <Content Include="data\Posters\TheClockmaker.jpg" />
+    <Content Include="data\Posters\TheColorofMoney.jpg" />
+    <Content Include="data\Posters\TheConformist.jpg" />
+    <Content Include="data\Posters\TheConversation.jpg" />
+    <Content Include="data\Posters\TheCountofMonteCristo.jpg" />
+    <Content Include="data\Posters\TheCountryGirl.jpg" />
+    <Content Include="data\Posters\TheCranesAreFlying.jpg" />
+    <Content Include="data\Posters\TheCryingGame.jpg" />
+    <Content Include="data\Posters\TheDamned.jpg" />
+    <Content Include="data\Posters\TheDayoftheJackal.jpg" />
+    <Content Include="data\Posters\TheDaytheEarthStoodStill.jpg" />
+    <Content Include="data\Posters\TheDeerHunter.jpg" />
+    <Content Include="data\Posters\TheDefiantOnes.jpg" />
+    <Content Include="data\Posters\TheDirtyDozen.jpg" />
+    <Content Include="data\Posters\TheDiscreetCharmoftheBourgeoisie.jpg" />
+    <Content Include="data\Posters\TheDreamlifeofAngels.jpg" />
+    <Content Include="data\Posters\TheDuellists.jpg" />
+    <Content Include="data\Posters\TheEnglishPatient.jpg" />
+    <Content Include="data\Posters\TheFamilyGame.jpg" />
+    <Content Include="data\Posters\TheFortuneCookie.jpg" />
+    <Content Include="data\Posters\TheFugitive.jpg" />
+    <Content Include="data\Posters\TheFullMonty.jpg" />
+    <Content Include="data\Posters\TheGeneral.jpg" />
+    <Content Include="data\Posters\TheGleanersandI.jpg" />
+    <Content Include="data\Posters\TheGodfatherPartII.jpg" />
+    <Content Include="data\Posters\TheGood,theBadandtheUgly.jpg" />
+    <Content Include="data\Posters\TheGrapesofWrath.jpg" />
+    <Content Include="data\Posters\TheGreatMcGinty.jpg" />
+    <Content Include="data\Posters\TheGunfighter.jpg" />
+    <Content Include="data\Posters\TheHeartbreakKid.jpg" />
+    <Content Include="data\Posters\TheHeiress.jpg" />
+    <Content Include="data\Posters\TheHomecoming.jpg" />
+    <Content Include="data\Posters\TheHours.jpg" />
+    <Content Include="data\Posters\TheInsider.jpg" />
+    <Content Include="data\Posters\TheJazzSinger.jpg" />
+    <Content Include="data\Posters\TheJudgeandtheAssassin.jpg" />
+    <Content Include="data\Posters\TheKillers.jpg" />
+    <Content Include="data\Posters\TheKingofMarvinGardens.jpg" />
+    <Content Include="data\Posters\TheLadyVanishes.jpg" />
+    <Content Include="data\Posters\TheLastSeduction.jpg" />
+    <Content Include="data\Posters\TheLastTemptationofChrist.jpg" />
+    <Content Include="data\Posters\TheLavenderHillMob.jpg" />
+    <Content Include="data\Posters\TheLetter.jpg" />
+    <Content Include="data\Posters\Thelma&amp;Louise.jpg" />
+    <Content Include="data\Posters\TheLongestDay.jpg" />
+    <Content Include="data\Posters\TheLostWeekend.jpg" />
+    <Content Include="data\Posters\TheMadnessofKingGeorge.jpg" />
+    <Content Include="data\Posters\TheMalteseFalcon.jpg" />
+    <Content Include="data\Posters\TheManWhoLovedWomen.jpg" />
+    <Content Include="data\Posters\TheManWhoWasn%27tThere.jpg" />
+    <Content Include="data\Posters\TheMen.jpg" />
+    <Content Include="data\Posters\TheMiracleWorker.jpg" />
+    <Content Include="data\Posters\TheMoretheMerrier.jpg" />
+    <Content Include="data\Posters\TheOppositeofSex.jpg" />
+    <Content Include="data\Posters\ThePeopleVs.LarryFlynt.jpg" />
+    <Content Include="data\Posters\ThePhiladelphiaStory.jpg" />
+    <Content Include="data\Posters\ThePianist.jpg" />
+    <Content Include="data\Posters\ThePillowBook.jpg" />
+    <Content Include="data\Posters\ThePrivateLifeofHenryVIII.jpg" />
+    <Content Include="data\Posters\ThePublicEnemy.jpg" />
+    <Content Include="data\Posters\ThePurpleRoseofCairo.jpg" />
+    <Content Include="data\Posters\TheServant.jpg" />
+    <Content Include="data\Posters\TheSnakePit.jpg" />
+    <Content Include="data\Posters\TheStoryofG.I.Joe.jpg" />
+    <Content Include="data\Posters\TheStraightStory.jpg" />
+    <Content Include="data\Posters\TheSweetHereafter.jpg" />
+    <Content Include="data\Posters\TheTenCommandments.jpg" />
+    <Content Include="data\Posters\TheThinRedLine.jpg" />
+    <Content Include="data\Posters\TheThirdGeneration.jpg" />
+    <Content Include="data\Posters\TheThirdMan.jpg" />
+    <Content Include="data\Posters\TheTrain.jpg" />
+    <Content Include="data\Posters\TheTreasureoftheSierraMadre.jpg" />
+    <Content Include="data\Posters\TheTroublewithHarry.jpg" />
+    <Content Include="data\Posters\TheUsualSuspects.jpg" />
+    <Content Include="data\Posters\TheWarGame.jpg" />
+    <Content Include="data\Posters\TheWarriors.jpg" />
+    <Content Include="data\Posters\TheWaterdance.jpg" />
+    <Content Include="data\Posters\TheWhalesofAugust.jpg" />
+    <Content Include="data\Posters\TheWorldofApu.jpg" />
+    <Content Include="data\Posters\TheYearling.jpg" />
+    <Content Include="data\Posters\ThirtyTwoShortFilmsAboutGlennGould.jpg" />
+    <Content Include="data\Posters\ThisSportingLife.jpg" />
+    <Content Include="data\Posters\ThreeDaysoftheCondor.jpg" />
+    <Content Include="data\Posters\TightLittleIsland.jpg" />
+    <Content Include="data\Posters\ToKillaMockingbird.jpg" />
+    <Content Include="data\Posters\ToLive.jpg" />
+    <Content Include="data\Posters\TomJones.jpg" />
+    <Content Include="data\Posters\TouchofEvil.jpg" />
+    <Content Include="data\Posters\ToyStory.jpg" />
+    <Content Include="data\Posters\Traffic.jpg" />
+    <Content Include="data\Posters\Trainspotting.jpg" />
+    <Content Include="data\Posters\Tristana.jpg" />
+    <Content Include="data\Posters\Ugetsu.jpg" />
+    <Content Include="data\Posters\Vanyaon42ndStreet.jpg" />
+    <Content Include="data\Posters\Vertigo.jpg" />
+    <Content Include="data\Posters\Viridiana.jpg" />
+    <Content Include="data\Posters\WakingLife.jpg" />
+    <Content Include="data\Posters\WelcometotheDollhouse.jpg" />
+    <Content Include="data\Posters\What%27sEatingGilbertGrape.jpg" />
+    <Content Include="data\Posters\WhoFramedRogerRabbit.jpg" />
+    <Content Include="data\Posters\WildReeds.jpg" />
+    <Content Include="data\Posters\WildStrawberries.jpg" />
+    <Content Include="data\Posters\Wilson.jpg" />
+    <Content Include="data\Posters\WingsofDesire.jpg" />
+    <Content Include="data\Posters\YouCanCountOnMe.jpg" />
+    <Content Include="data\Posters\YouOnlyLiveOnce.jpg" />
+    <Content Include="data\Posters\YTuMamáTambién.jpg" />
+    <Content Include="data\Posters\ZeroforConduct.jpg" />
+    <Content Include="index.html" />
+    <Content Include="assets\libs\angular\angular.min.js" />
+    <Content Include="assets\libs\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="assets\libs\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="assets\libs\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\libs\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\libs\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\libs\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\libs\bootstrap\js\bootstrap.min.js" />
+    <None Include="assets\libs\jquery\jquery-2.0.3.intellisense.js" />
+    <Content Include="assets\libs\jquery\jquery-2.0.3.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\Controllers\CountryController.cs" />
+    <Compile Include="Api\JpgActionResult.cs" />
+    <Compile Include="Api\Model\Data.cs" />
+    <Compile Include="Api\Model\PosterLoader.cs" />
+    <Compile Include="Api\Model\JsonLoader.cs" />
+    <Compile Include="Api\Controllers\ReviewsController.cs" />
+    <Compile Include="Api\Controllers\MoviesController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>16415</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16416/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,66 @@
+﻿<div class="page-header">
+    <h1>Movies</h1>
+</div>
+<div class="row">
+    <p ng-show="model.loading">Loading...</p>
+    <p ng-show="!model.loading && (!model.movies || !model.movies.length)">No Movies Found.</p>
+    <table ng-show="model.movies" class="table table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Year</th>
+                <th>Country</th>
+                <!--<td></td>-->
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="movie in model.movies"
+                ng-click="selectMovie($index)" 
+                click-modal="movie-details"
+            >
+                <td>{{movie.title}}</td>
+                <td>{{movie.rating}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.country}}</td>
+                <!--<td class="hide-unless-hover">
+            <img ng-src="{{movie.poster}}">
+        </td>-->
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="movie-details" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{model.selectedMovie.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <img class="poster" ng-src="{{model.selectedMovie.poster}}">
+                <div class="detail">
+                    <strong>Description:</strong>
+                    <div>{{model.selectedMovie.description}}</div>
+                    <div>
+                        <strong>Number of Reviews:</strong>
+                        <span>{{model.selectedMovie.numberOfReviews||0}}</span>
+                    </div>
+                    <div>
+                        <strong>Stars:</strong>
+                        <span>{{model.selectedMovie.stars||none}}</span>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal" set-path-after-dismiss="/movies/{{model.selectedMovie.id}}">Edit Movie</button>
+                <button type="button" class="btn" data-dismiss="modal" set-path-after-dismiss="/reviews/{{model.selectedMovie.id}}">See All Reviews</button>
+                <button type="button" class="btn" data-dismiss="modal" set-path-after-dismiss="/reviews/{{model.selectedMovie.id}}/new">Write a Review</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>

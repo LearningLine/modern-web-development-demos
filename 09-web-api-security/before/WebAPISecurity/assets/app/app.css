@@ -1,0 +1,58 @@
+.modal-lg {
+  width: 900px;
+}
+.table-hover tbody {
+  cursor: pointer;
+}
+img.poster {
+  float: left;
+}
+.detail {
+  margin-left: 165px;
+}
+.detail > div {
+  margin-bottom: 10px;
+}
+.detail > div:last-child {
+  margin-bottom: 0px;
+}
+tr .hide-unless-hover {
+  position: relative;
+  width: 100px;
+}
+tr .hide-unless-hover img {
+  position: absolute;
+  top: 0;
+  left: -80px;
+}
+tr:hover .hide-unless-hover img {
+  z-index: 100;
+  background-color: white;
+  border: 1px solid black;
+  padding: 15px;
+  left: -96px;
+}
+.icon-movie {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('images/movie.png');
+  -moz-background-size: 100px;
+  -o-background-size: 100px;
+  -webkit-background-size: 100px;
+  background-size: 100px;
+  position: relative;
+  left: 16px;
+}
+.icon-review {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-image: url('images/review.png');
+  -moz-background-size: 100px;
+  -o-background-size: 100px;
+  -webkit-background-size: 100px;
+  background-size: 100px;
+  position: relative;
+  left: 25px;
+}

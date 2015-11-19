@@ -1,0 +1,60 @@
+﻿.modal-lg{
+    width:900px;
+}
+
+.table-hover tbody{
+    cursor:pointer;
+}
+
+img.poster{
+    float:left;
+}
+.detail{
+    margin-left:165px;
+}
+.detail > div{
+    margin-bottom:10px;
+}
+.detail > div:last-child{
+    margin-bottom:0px;
+}
+
+tr .hide-unless-hover{
+    position:relative;
+    width:100px;
+}
+tr .hide-unless-hover img{
+    position:absolute;
+    top:0;
+    left:-80px;
+}
+tr:hover .hide-unless-hover img{
+    z-index:100;
+    background-color:white;
+    border:1px solid black;
+    padding:15px;
+    left:-96px;
+}
+
+.icon(@file, @size:100px){
+    display: inline-block;
+    width:@size;
+    height:@size;
+    background-image: url('images/@{file}');
+    -moz-background-size: @size;
+    -o-background-size: @size;
+    -webkit-background-size: @size;
+    background-size: @size;
+}
+
+.icon-movie {
+    .icon("movie.png");
+    position:relative;
+    left:16px;
+}
+
+.icon-review {
+    .icon("review.png");
+    position:relative;
+    left:25px;
+}

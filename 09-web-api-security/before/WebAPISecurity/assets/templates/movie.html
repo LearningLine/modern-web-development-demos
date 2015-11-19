@@ -1,0 +1,48 @@
+﻿<div class="page-header">
+    <h1>Edit Movie <small>{{model.movie.title}}</small></h1>
+</div>
+
+<div class="row" ng-hide="!model.error">
+    <div class="col-sm-6">
+        <div class="alert alert-danger">{{model.error}}</div>
+    </div>
+</div>
+
+<div class="row" ng-hide="!model.success">
+    <div class="col-sm-6">
+        <div class="alert alert-success" ng-hide="!model.success">
+            Movie Updated.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <form class="col-sm-6" ng-submit="update()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control input-sm" ng-model="model.movie.title" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="title" class="form-control input-sm" ng-model="model.movie.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" id="year" class="form-control input-sm" ng-model="model.movie.year">
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="text" id="rating" class="form-control input-sm" ng-model="model.movie.rating">
+        </div>
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" class="form-control input-sm" ng-model="model.movie.countryID">
+                <option ng-repeat="country in model.countries" value="{{country.id}}">{{country.name}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Update</button>
+        </div>
+    </form>
+</div>
+

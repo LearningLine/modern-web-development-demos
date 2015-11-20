@@ -1,0 +1,38 @@
+/* selector */
+
+@media print {
+    .advertisment { display: none; }
+}
+
+@media screen and (min-width: 500px) {
+    div {
+        margin: 1em;
+        -webkit-column-count: 3;
+    }
+}
+
+.foo {
+    color: pink;
+    padding: 20px;
+}
+p {
+    color: green /* !important */;
+    border: black 1px dashed;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #999;
+    /*background-image: url() top left, url() top right, url();*/
+    background-image: linear-gradient(#9999ff, blue);
+    transform-origin: top left;
+    transition: transform 2s;
+}
+
+p:hover {
+    transform: rotate(45deg);
+}
+
+#myID {
+    background-color: yellow;
+}
+.myClass {
+    font-size: 18pt;
+}

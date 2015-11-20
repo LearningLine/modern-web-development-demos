@@ -1,0 +1,32 @@
+@my-color: #123456;
+
+body {
+    background-color: @my-color;
+}
+
+@tablet-width: 768px; /* 10px for left border + 700px for main content ... */
+
+.my-font(@size: 50px, @whatever: 10px) {
+    font-size: @size;
+    -webkit-whatever: 1px;
+    -moz-whatever: 1px;
+    -ms-whatever: 1px;
+    -o-whatever: 1px;
+}
+
+.foo {
+    .my-font;
+
+    .bar {
+        color: red;
+
+        @media screen and (min-width: @tablet-width) {
+            color: orange;
+        }
+    }
+}
+
+.bar {
+    .my-font(40px);
+    color: green;
+}

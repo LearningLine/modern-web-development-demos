@@ -1,0 +1,18 @@
+CACHE MANIFEST
+
+# v3
+
+CACHE:
+
+script.js
+style.css
+
+NETWORK:
+
+/api/ping
+
+FALLBACK:
+
+# /api offline.json
+# /images offline.png
+# / offline.html

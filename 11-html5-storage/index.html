@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Storage</title>
+</head>
+<body>
+
+    <input id="name" type="text">
+    <button id="save">Save</button>
+    <button id="query">Query</button>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+    <script>
+        // web storage
+        // localStorage.setItem('name', 'Jason');
+        // sessionStorage.setItem('color', 'pink');
+
+        $(function() {
+            $('#query').on('click', function() {
+                openDB(function(db) {
+                    var tx = db.transaction([ 'people' ], 'readonly');
+
+                    var people = tx.objectStore('people');
+
+                    var cursorReq = people.openCursor();
+
+                    cursorReq.onsuccess = function(e) {
+                        if (e.target.result) {
+                            console.log(e.target.result.value);
+                            e.target.result.continue();
+                        } else {
+                            console.log('done!');
+                        }
+                    };
+                });
+            });
+
+            $('#save').on('click', function() {
+                var person = {
+                    // id: 123,
+                    name: $('#name').val()
+                };
+
+                openDB(function(db) {
+                    var tx = db.transaction([ 'people' ], 'readwrite');
+
+                    var people = tx.objectStore('people');
+
+                    var putReq = people.put(person);
+
+                    putReq.onsuccess = function() {
+                        console.log('put succeeded!');
+                    };
+
+                    putReq.onerror = function(e) {
+                        console.log('put failed because ' + e);
+                    };
+                });
+
+                // localStorage.setItem('person', JSON.stringify(person));
+                localStorage.person = JSON.stringify(person);
+            });
+
+            function openDB(cb) {
+                var openReq = indexedDB.open('demoDB', 4);
+
+                openReq.onsuccess = function(e) {
+                    console.log('db is open!');
+
+                    var db = e.target.result;
+
+                    cb(db);
+                };
+
+                openReq.onupgradeneeded = function(e) {
+                    console.log('need to upgrade from v%d to v%d',
+                        e.oldVersion, e.newVersion);
+
+                    var db = e.target.result;
+
+                    if (e.oldVersion < 2) {
+                        db.createObjectStore('people');
+                    }
+
+                    if (e.oldVersion < 3) {
+                        db.deleteObjectStore('people');
+
+                        db.createObjectStore('people', {
+                            keyPath: 'id'
+                        });
+                    }
+
+                    if (e.oldVersion < 4) {
+                        db.deleteObjectStore('people');
+
+                        db.createObjectStore('people', {
+                            autoIncrement: true
+                        });
+                    }
+                };
+
+                openReq.onerror = function(e) {
+                    console.log(e);
+                };
+            }
+
+            // $('#name').val(JSON.parse(localStorage.getItem('person')).name);
+            $('#name').val(JSON.parse(localStorage.person).name);
+        });
+
+    </script>
+</body>
+</html>
